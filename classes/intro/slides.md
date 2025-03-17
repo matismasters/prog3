@@ -1,14 +1,10 @@
-```markdown
 <!-- .slide: data-background="#2E3440" data-color="#D8DEE9" -->
-# Primera Clase de Programación 3
-### Matías Verges
+# Profesor: Matías Verges
 
 ---
 
 <!-- .slide: data-background="#3B4252" data-color="#ECEFF4" -->
-# ¿Para qué están haciendo esta carrera?
-- ¿Qué esperan conseguir?
-- ¿Es por trabajo, curiosidad o transformación?
+# ¿Que estan haciendo acá?
 
 ---
 
@@ -18,32 +14,28 @@
 ---
 
 <!-- .slide: data-background="#434C5E" data-color="#E5E9F0" -->
-# El Valor del Empleado
-- ¿Por qué una empresa contrata a alguien?
-- ¿Qué habilidades aportas tú?
+# ¿Por qué las empresas contratan?
+
 
 ---
 
 <!-- .slide: data-background="#3B4252" data-color="#D8DEE9" -->
-# Tu valor debe superar el costo de contratación.
+# La importancia de agregar valor.
 
 ---
 
 <!-- .slide: data-background="#4C566A" data-color="#ECEFF4" -->
 # Modelos de Negocio de empresas de Software en Uruguay
-- ¿Cómo se transfiere el valor en una software factory vs. freelancer?
 
 ---
 
 <!-- .slide: data-background="#434C5E" data-color="#E5E9F0" -->
-# Comprende el modelo y encuentra dónde agregar valor.
+# Comprende el modelo de negocio para poder agregar valor.
 
 ---
 
 <!-- .slide: data-background="#3B4252" data-color="#D8DEE9" -->
-# Pensar como Empleador y Emprendedor
-- ¿Cómo te diferencias y ofreces soluciones?
-- ¿Qué buscarías en un profesional?
+# Pensar como Emprendedor
 
 ---
 
@@ -81,6 +73,13 @@
 - ¿Qué ideas de negocio o proyectos tienen?
 - ¿Cómo implementarían soluciones con IA?
 
+
+---
+
+# Prompt de ejemplo:
+
+Tengo una idea para una empresa que [descripción breve de la idea]. ¿Cuáles serían los primeros pasos a seguir para implementarla, cuáles son los principales desafíos que enfrentaríamos y qué modelo de negocio recomendarías para esta idea?
+
 ---
 
 <!-- .slide: data-background="#3B4252" data-color="#ECEFF4" -->
@@ -96,4 +95,3 @@
 
 <!-- .slide: data-background="#4C566A" data-color="#ECEFF4" -->
 # El futuro es de quienes **agregan valor** y se adaptan.
-```
