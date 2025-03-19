@@ -76,6 +76,7 @@
 
 ---
 
+<!-- .slide: data-background="#2E3440" data-color="#D8DEE9" -->
 # Prompt de ejemplo:
 
 Tengo una idea para una empresa que [descripción breve de la idea]. ¿Cuáles serían los primeros pasos a seguir para implementarla, cuáles son los principales desafíos que enfrentaríamos y qué modelo de negocio recomendarías para esta idea?
