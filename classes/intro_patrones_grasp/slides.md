@@ -41,8 +41,7 @@
 - ¿Quién tiene la información necesaria para realizar la tarea?
 - **Principio clave**: Delegar la responsabilidad a quien tiene los datos.
 
-### Ejemplo
-- Clase **Factura** calcula el total porque conoce sus **líneas de factura**.
+> Ejemplo: Clase **Factura** calcula el total porque conoce sus **líneas de factura**.
 
 
 
@@ -52,8 +51,7 @@
 - ¿Quién debe crear una instancia de otra clase?
 - **Regla**: La clase que contiene o usa estrechamente a otra, debe crearla.
 
-### Ejemplo
-- **Pedido** crea sus propias **Líneas de Pedido**.
+> Ejemplo: **Pedido** crea sus propias **Líneas de Pedido**.
 
 
 
@@ -63,11 +61,7 @@
 - ¿Quién recibe y coordina las solicitudes externas?
 - **Controlador** es un intermediario entre la UI y el modelo de negocio.
 
-### Ejemplo
-- **SistemaVentas** procesa la solicitud de "realizar venta".
-
-> **Nota**: Evitar que la interfaz gráfica haga la lógica de negocio directamente.
-
+> Ejemplo: **SistemaVentas** procesa la solicitud de "realizar venta".
 
 
 <!-- .slide: data-background="#0f2027" data-background-gradient="linear-gradient(to right, #2c5364, #203a43, #0f2027)" -->
@@ -76,8 +70,7 @@
 - Minimizar las dependencias entre clases.
 - Facilita cambios y mantenimiento.
 
-### Estrategias
-- Delegar tareas a clases con menos dependencias externas.
+> Estrategias: Delegar tareas a clases con menos dependencias externas.
 
 <!-- .slide: data-background="#0f2027" data-background-gradient="linear-gradient(to right, #2c5364, #203a43, #0f2027)" -->
 ## 5. High Cohesion
@@ -92,18 +85,14 @@
 
 - Usar polimorfismo para manejar comportamientos variantes.
 
-### Ejemplo:
-- **Empleado** es clase base, **EmpleadoPorHora** y **EmpleadoAsalariado** implementan su propia lógica de cálculo de salario.
-
-
+> Ejemplo: **Empleado** es clase base, **EmpleadoPorHora** y **EmpleadoAsalariado** implementan su propia lógica de cálculo de salario.
 
 <!-- .slide: data-background="#0f2027" data-background-gradient="linear-gradient(to right, #2c5364, #203a43, #0f2027)" -->
 ## 7. Pure Fabrication
 
 - Crear una clase "ficticia" para reducir acoplamiento o aumentar cohesión.
 
-### Ejemplo:
-- **RepositorioDeUsuarios** para manejar la persistencia, separando lógica de negocio.
+> Ejemplo: **RepositorioDeUsuarios** para manejar la persistencia, separando lógica de negocio.
 
 
 
@@ -112,8 +101,7 @@
 
 - Introducir un intermediario para desacoplar clases.
 
-### Ejemplo:
-- Un **Service Layer** que actúa entre controladores y objetos de dominio.
+> Ejemplo: Un **Service Layer** que actúa entre controladores y objetos de dominio.
 
 
 
@@ -122,8 +110,7 @@
 
 - Proteger elementos de posibles cambios o variaciones.
 
-### Ejemplo:
-- Usar interfaces para proteger la lógica de negocio de cambios en la base de datos.
+> Ejemplo: Usar interfaces para proteger la lógica de negocio de cambios en la base de datos.
 
 
 
@@ -143,7 +130,7 @@
   - Diseña un sistema de reservas de hotel.
   - Aplica al menos 3 patrones GRASP.
   
-### Preguntas orientadoras
+> Preguntas orientadoras
 1. ¿Quién debería crear las reservas?
 2. ¿Quién debe recibir las solicitudes de la UI?
 3. ¿Cómo evitarías un alto acoplamiento?
