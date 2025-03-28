@@ -39,7 +39,7 @@ Horas totales: (96)
 
 ## Contenidos
 
-### Clase 1: Repaso de Programación Orientada a Objetos y Diseño de Aplicaciones
+### Semana 1: Repaso de Programación Orientada a Objetos y Diseño de Aplicaciones
 
 #### Objetivos:
 - Repasar los principios de programación orientada a objetos.
@@ -55,7 +55,7 @@ Horas totales: (96)
 - Crear diagramas de casos de uso para una aplicación de ejemplo.
 - Ejercicios prácticos en UML.
 
-### Clase 2: Análisis y Diseño de Software (Casos de Uso)
+### Semana 2: Análisis y Diseño de Software (Casos de Uso)
 
 #### Objetivos:
 - Detallar el análisis y la especificación de casos de uso.
@@ -70,7 +70,7 @@ Horas totales: (96)
 - Desarrollo de casos de uso para una aplicación.
 - Creación de diagramas de interacción entre objetos.
 
-### Clase 3: Persistencia de Datos en Aplicaciones Web
+### Semana 3: Persistencia de Datos en Aplicaciones Web
 
 #### Objetivos:
 - Introducción al manejo de bases de datos.
@@ -84,7 +84,7 @@ Horas totales: (96)
 - Crear una conexión a una base de datos usando ADO.NET.
 - Realizar operaciones básicas como insertar, eliminar y consultar datos.
 
-### Clase 4: Introducción a Entity Framework y ORM
+### Semana 4: Introducción a Entity Framework y ORM
 
 #### Objetivos:
 - Introducir Entity Framework como herramienta para la persistencia de datos.
@@ -99,7 +99,7 @@ Horas totales: (96)
 - Crear un modelo de datos utilizando Entity Framework.
 - Realizar operaciones CRUD utilizando EF.
 
-### Clase 5: Patrones Arquitectónicos: Arquitectura en Capas
+### Semana 5: Patrones Arquitectónicos: Arquitectura en Capas
 
 #### Objetivos:
 - Introducción a los patrones arquitectónicos.
@@ -114,7 +114,7 @@ Horas totales: (96)
 - Diseñar una aplicación usando arquitectura en capas.
 - Dividir el proyecto en capas (presentación, lógica de negocio, acceso a datos).
 
-### Clase 6: Patrones Arquitectónicos (Continuación)
+### Semana 6: Patrones Arquitectónicos (Continuación)
 
 #### Objetivos:
 - Profundizar en la organización de la lógica en capas.
@@ -128,7 +128,7 @@ Horas totales: (96)
 - Crear una aplicación que utilice una arquitectura en capas.
 - Desarrollar un acceso a datos eficiente con separación de responsabilidades.
 
-### Clase 7: ASP.NET MVC: Repaso y Avance
+### Semana 7: ASP.NET MVC: Repaso y Avance
 
 #### Objetivos:
 - Repasar los conceptos fundamentales de ASP.NET MVC.
@@ -143,7 +143,7 @@ Horas totales: (96)
 - Crear vistas dinámicas utilizando Razor View Engine.
 - Personalizar vistas con plantillas de diseño.
 
-### Clase 8: ASP.NET MVC: AJAX y Actualización de Vistas
+### Semana 8: ASP.NET MVC: AJAX y Actualización de Vistas
 
 #### Objetivos:
 - Introducir el uso de AJAX para actualizar vistas sin recargar la página.
@@ -155,7 +155,7 @@ Horas totales: (96)
 #### Actividades:
 - Implementar AJAX para la actualización de una vista.
 
-### Clase 9: Integración de ASP.NET MVC con Entity Framework
+### Semana 9: Integración de ASP.NET MVC con Entity Framework
 
 #### Objetivos:
 - Conectar la capa de presentación con la base de datos usando Entity Framework.
@@ -167,7 +167,7 @@ Horas totales: (96)
 #### Actividades:
 - Crear un formulario en una vista para agregar datos a la base de datos.
 
-### Clase 10: Introducción a los Servicios Web
+### Semana 10: Introducción a los Servicios Web
 
 #### Objetivos:
 - Introducir los conceptos de servicios web.
@@ -180,7 +180,7 @@ Horas totales: (96)
 #### Actividades:
 - Desarrollar un servicio web básico en ASP.NET.
 
-### Clase 11: Continuación de Servicios Web
+### Semana 11: Continuación de Servicios Web
 
 #### Objetivos:
 - Ampliar la implementación de servicios web.
@@ -193,7 +193,7 @@ Horas totales: (96)
 #### Actividades:
 - Consumir un servicio web RESTful desde una aplicación ASP.NET.
 
-### Clase 12: Patrones de Diseño: Introducción
+### Semana 12: Patrones de Diseño: Introducción
 
 #### Objetivos:
 - Introducción a los patrones de diseño más comunes.
@@ -204,7 +204,7 @@ Horas totales: (96)
 #### Actividades:
 - Implementar un patrón de diseño en una aplicación ASP.NET.
 
-### Clase 13: Diseño de Aplicaciones Orientadas a Objetos
+### Semana 13: Diseño de Aplicaciones Orientadas a Objetos
 
 #### Objetivos:
 - Aplicar los conceptos de diseño orientado a objetos en aplicaciones reales.
@@ -216,7 +216,7 @@ Horas totales: (96)
 #### Actividades:
 - Rediseñar una aplicación con principios SOLID en mente.
 
-### Clase 14: Patrones de Diseño en ASP.NET
+### Semana 14: Patrones de Diseño en ASP.NET
 
 #### Objetivos:
 - Aplicar patrones de diseño en aplicaciones ASP.NET.
@@ -227,7 +227,7 @@ Horas totales: (96)
 #### Actividades:
 - Implementar un patrón de diseño en una aplicación ASP.NET MVC.
 
-### Clase 15: Introducción a Web API
+### Semana 15: Introducción a Web API
 
 #### Objetivos:
 - Introducir el concepto de Web API.
@@ -238,7 +238,7 @@ Horas totales: (96)
 #### Actividades:
 - Desarrollar una Web API sencilla en ASP.NET.
 
-### Clase 16: Continuación de Web API
+### Semana 16: Continuación de Web API
 
 #### Objetivos:
 - Profundizar en el desarrollo de Web API.
