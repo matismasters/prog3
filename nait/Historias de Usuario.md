@@ -1,5 +1,7 @@
 # Historias de Usuario
 
+## >Terminada< Como usuario no registrado quiero poder acceder a informacion basica de la app, FAQ, Terminos y Condiciones, etc.
+
 ## Como usuario no registrado quiero poder registrarme en la aplicación para poder usarla.
 
 ## Como usuario registrado quiero poder ver el mapa de donde estoy asi se si alguien inicia actividad.
@@ -8,13 +10,12 @@
 
 ## Como usuario registrado quiero poder ver las actividades de los demás usuarios en el mapa para saber que están haciendo.
 
-## Como usuario registrado si voy hasta donde se esta realizando una actividad quiero que me sume a esa actividad automaticamente asi no tengo que hacer nada.
-
 ## Como usuario registrado quiero poder editar mi actividad creada por si me equivoque en algo.
 
 ## Como usuario registrado quiero poder terminar mi actividad por si ya nos estamos yendo.
 
-## Como usuario no registrado quiero poder acceder a informacion basica de la app, FAQ, Terminos y Condiciones, etc.
+## Como usuario registrado si voy hasta donde se esta realizando una actividad quiero que me sume a esa actividad automaticamente asi no tengo que hacer nada.
+
 
 ---
     
