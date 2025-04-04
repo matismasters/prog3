@@ -255,8 +255,8 @@ Horas totales: (96)
 
 #### Evaluación
 
-- **Parcial 1**: Semana 8, 7 de Octubre (25% de la nota final).
-- **Parcial 2**: Semana 16, 2 de Diciembre (25% de la nota final).
+- **Parcial 1**: Semana 8 (25% de la nota final).
+- **Parcial 2**: Semana 16 (25% de la nota final).
 - **Trabajo Obligatorio**: Entrega en la semana 12, sobre arquitectura en capas y patrón de diseño.
 - **Puntaje Final**: El puntaje final será dado a conocer la semana siguiente a la última clase.
 
