@@ -2,7 +2,9 @@
 
 ## >Terminada< Como usuario no registrado quiero poder acceder a informacion basica de la app, FAQ, Terminos y Condiciones, etc.
 
-## Como usuario no registrado quiero poder registrarme en la aplicación para poder usarla.
+## >Terminada< Como usuario no registrado quiero poder registrarme en la aplicación para poder usarla.
+
+## >Terminada< Como usuario registrado quiero poder iniciar sesion en la aplicación para poder usarla.
 
 ## Como usuario registrado quiero poder ver el mapa de donde estoy asi se si alguien inicia actividad.
 
