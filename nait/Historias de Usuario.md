@@ -6,7 +6,7 @@
 
 ## >Terminada< Como usuario registrado quiero poder iniciar sesion en la aplicación para poder usarla.
 
-## Como usuario registrado quiero poder ver el mapa de donde estoy asi se si alguien inicia actividad.
+## >Terminada< Como usuario registrado quiero poder ver el mapa de donde estoy asi se si alguien inicia actividad.
 
 ## Como usuario registrado quiero poder iniciar una actividad agregando un mensaje para que los demás usuarios sepan que estoy haciendo.
 
