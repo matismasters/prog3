@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Observer JS</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/observer-js/1.0.0/observer.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prueba Observer JS</h1>
+    <div class="container">
+        <h2>Contador</h2>
+        <button id="increment">Incrementar</button>
+        <button id="decrement">Decrementar</button>
+        <p id="count">0</p>
+    </div>
+
+    <div class="container">
+        <h2>Texto Observado</h2>
+        <input type="text" id="observedText" placeholder="Escribe algo...">
+        <p id="displayText"></p>
+    </div>
+
+    <script>
+        // Contador
+        let count = 0;
+        const countElement = $('#count');
+
+        $('#increment').click(function() {
+            count++;
+            countElement.text(count);
+        });
+
+        $('#decrement').click(function() {
+            count--;
+            countElement.text(count);
+        });
+
+        // Texto observado
+        const observedText = $('#observedText');
+        const displayText = $('#displayText');
+
+        observedText.on('input', function() {
+            displayText.text(observedText.val());
+        });
+
+        // Observer para el contador
+        const counterObserver = new Observer(countElement[0]);
+        counterObserver.observe('textContent', function(newValue) {
+            console.log('Contador actualizado:', newValue);
+        });
+
+        // Observer para el texto observado
+        const textObserver = new Observer(displayText[0]);
+        textObserver.observe('textContent', function(newValue) {
+            console.log('Texto observado actualizado:', newValue);
+        });
+
+        // Actualizar el contador y el texto observado al cargar la página
+        $(document).ready(function() {
+            countElement.text(count);
+            displayText.text(observedText.val());
+        });
+    </script>
+</body>
+</html>

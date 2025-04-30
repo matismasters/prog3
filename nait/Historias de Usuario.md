@@ -10,6 +10,12 @@
 
 ## Como usuario registrado quiero poder iniciar una actividad agregando un mensaje para que los demás usuarios sepan que estoy haciendo.
 
+## [YAPA] Como usuario no registrado quiero poder registrarrme como usuario anfitrion para luego tener funcionalidad extra.
+- Criterio de Aceptacion: El usuario no registrado tiene que ir a un form diferente al de usuario registrado normal para crear su cuenta de anfitrion.
+
+## [YAPA] Como usuario anfitrion quiero poder iniciar sesion en la aplicación para poder usarla.
+- Criterio de Aceptacion: El usuario anfitrion ve un indicador que dice Anfitrion en la navegacion inferior de la app.
+
 ## Como usuario registrado quiero poder ver las actividades de los demás usuarios en el mapa para saber que están haciendo.
 
 ## Como usuario registrado quiero poder editar mi actividad creada por si me equivoque en algo.
