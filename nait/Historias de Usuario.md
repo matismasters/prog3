@@ -8,32 +8,24 @@
 
 ## >Terminada< Como usuario registrado quiero poder ver el mapa de donde estoy asi se si alguien inicia actividad.
 
-## Como usuario registrado quiero poder iniciar una actividad agregando un mensaje para que los demás usuarios sepan que estoy haciendo.
+## >Terminada< Como usuario registrado quiero poder iniciar una actividad agregando un mensaje para que los demás usuarios sepan que estoy haciendo.
 
-## [YAPA] Como usuario no registrado quiero poder registrarrme como usuario anfitrion para luego tener funcionalidad extra.
+## >Terminada< [YAPA] Como usuario no registrado quiero poder registrarme como usuario anfitrion para luego tener funcionalidades extra.
 - Criterio de Aceptacion: El usuario no registrado tiene que ir a un form diferente al de usuario registrado normal para crear su cuenta de anfitrion.
 
-## [YAPA] Como usuario anfitrion quiero poder iniciar sesion en la aplicación para poder usarla.
+## >Terminada< [YAPA] Como usuario anfitrion quiero poder iniciar sesion en la aplicación para poder usarla.
 - Criterio de Aceptacion: El usuario anfitrion ve un indicador que dice Anfitrion en la navegacion inferior de la app.
 
-## Como usuario registrado quiero poder ver las actividades de los demás usuarios en el mapa para saber que están haciendo.
+## >Terminada< Como usuario registrado quiero poder ver las actividades de los demás usuarios en el mapa para saber que están haciendo.
 
 ## Como usuario registrado quiero poder editar mi actividad creada por si me equivoque en algo.
 
 ## Como usuario registrado quiero poder terminar mi actividad por si ya nos estamos yendo.
 
-## Como usuario registrado si voy hasta donde se esta realizando una actividad quiero que me sume a esa actividad automaticamente asi no tengo que hacer nada.
+## Como usuario registrado si voy hasta donde se esta realizando una actividad quiero que me sume a esa actividad como participante automaticamente asi no tengo que hacer nada.
 
 
 ---
-    
-## Como usuario registrado quiero poder ver un radio de privacidad al crear una actividad para que mi ubicación no sea exacta.
-
-## Como usuario registrado quiero poder crear actividades que me permita admitir o no a quienes quieran naitear conmigo
-
-## Como usuario registrado quiero poder contactarme con otros usuarios para poder naitear con ellos para concretar una actividad
-
-## Como usuario registrado quiero poder ubicar mis contactos facilmente en la aplicación para poder contactarlos.
 
 ## Como usuario registrado quiero poder ver un historial de actividades creadas alrededor de mi para saber si hay actividades que me interesen.
 
@@ -41,12 +33,17 @@
 
 ## Como usuario registrado quiero poder raitear las naiteadas a las que asisti para que la comunidad sepa que tan buena fue la actividad.
 
-## Como usuario registrado quiero poder tener chat privados con otros usuarios para poder coordinar actividades.
+## Como usuario anfitrion quiero que le llegue a aquellos participantes que estuvieron en una actividad que yo organice una notificacion cuando yo creo una nueva actividad, para que ellos puedan asistir a la nueva actividad.
 
-## Como usuario registrado quiero poder setear una opcion por defecto para que las actividades que cree sean siempre publicas/privadas.
+## Como usuario anfitrion quiero poder enviar una notificacion, una sola vez por actividad, a todos aquellos que participaron de una actividad que yo organice para recordarles que raiteen la actividad.
+- Criterio de Aceptacion: El anfitrion puede escribir un mensaje y enviarlo a todos los participantes de la actividad. El mensaje se envia una sola vez y no se puede volver a enviar.
 
-## Como usuario registrado quiero poder subir una foto a la actividad si estoy participando de ella asi el resto de los usuarios pueden entender mejor de que va la actividad.
+## Como usuario registrado quiero que solo me lleguen notificaciones de actividad nueva creada de anfitriones a los que raitee con mas de 3 estrellas en las actividades que participe, que el anfitrion organizo.
 
+## Como usuario anfitrion quiero tener una pagina de pago para los sponsors de mis eventos, para que ellos puedan pagarme por la publicidad que les hice en la actividad.
 
+## Como usuario anfitrion quiero poder exportar en PDF un reporte personal con estadisticas de mis actividades, para poder mostrarle a posibles sponsors que me contraten para hacer una actividad.
 
+## Como usuario anfitrion quiero poder crear super-actividades, que se vean con un color e icono diferente en el mapa, y que notifiquen a todos los usuarios activos en un rango de 2km de distancia.
 
+## Como usuario anfitrion quiero ver a cuantas personas les llego la notificacion de mi super-actividad, para saber si la notificacion fue efectiva o no.
