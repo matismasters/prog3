@@ -18,7 +18,15 @@
 
 ## >Terminada< Como usuario registrado quiero poder ver las actividades de los demás usuarios en el mapa para saber que están haciendo.
 
-## Como usuario registrado quiero poder editar mi actividad creada por si me equivoque en algo.
+## >Terminada< Como usuario registrado quiero tener un contador de actividades visibles sobre el mapa, para saber cuantas actividades hay en la zona.
+- Criterio de Aceptacion: El contador tiene que ser visible en la pantalla de mapa, sobre el mapa.
+
+## >Terminada< Como usuario registrado quiero que las actividades se actualicen automaticamente cada 5 segundos, para no tener que estar refrescando la pantalla.
+- Criterio de Aceptacion: La pantalla de mapa tiene que actualizarse automaticamente cada 5 segundos, sin refrescar la pagina entera.
+- Criterio de Aceptacion: El contador de actividades visibles sobre el mapa tiene que actualizarse automaticamente cada 5 segundos, sin refrescar la pagina entera.
+
+## >Terminada< Como usuario registrado quiero poder editar mi actividad creada por si me equivoque en algo.
+- Criterio de Aceptacion: Un usuario registrado no puede tener mas de una actividad activa al mismo tiempo.
 
 ## Como usuario registrado quiero poder terminar mi actividad por si ya nos estamos yendo.
 
