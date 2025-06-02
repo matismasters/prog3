@@ -30,7 +30,7 @@
 
 ## Como usuario registrado quiero poder terminar mi actividad por si ya nos estamos yendo.
 
-## Como usuario registrado si voy hasta donde se esta realizando una actividad quiero que me sume a esa actividad como participante automaticamente asi no tengo que hacer nada.
+## >Terminada< Como usuario registrado si voy hasta donde se esta realizando una actividad quiero que me sume a esa actividad como participante automaticamente asi no tengo que hacer nada.
 
 
 ---
