@@ -269,6 +269,53 @@ class Program
 - El Adapter (`AdaptadorCheque`) traduce la llamada moderna a la antigua.
 - Puedes agregar otros métodos de pago modernos implementando la misma interfaz.
 
+### 3.6. Otro ejemplo de uso
+
+```csharp
+// Interfaz moderna que espera el cliente
+public interface INotificacionElectronica
+{
+    void Enviar(string destinatario, string mensaje);
+}
+
+// Sistema antiguo que solo sabe enviar SMS
+public class ServicioSmsAntiguo
+{
+    public void EnviarSms(string numero, string texto)
+    {
+        Console.WriteLine($"Enviando SMS a {numero}: {texto}");
+    }
+}
+
+// Adapter: permite usar ServicioSmsAntiguo donde se espera INotificacionElectronica
+public class AdaptadorSms : INotificacionElectronica
+{
+    private readonly ServicioSmsAntiguo _servicioSms;
+
+    public AdaptadorSms(ServicioSmsAntiguo servicioSms)
+    {
+        _servicioSms = servicioSms;
+    }
+
+    public void Enviar(string destinatario, string mensaje)
+    {
+        // Traduce la llamada moderna a la del sistema antiguo
+        _servicioSms.EnviarSms(destinatario, mensaje);
+    }
+}
+
+// Uso en el cliente
+class Program
+{
+    static void Main()
+    {
+        INotificacionElectronica notificacion = new AdaptadorSms(new ServicioSmsAntiguo());
+        notificacion.Enviar("+59812345678", "¡Hola! Este es un mensaje de prueba.");
+        // Output: Enviando SMS a +59812345678: ¡Hola! Este es un mensaje de prueba.
+    }
+}
+```
+
 ---
 
 ## 4. Patrón Factory (Vehículos)
