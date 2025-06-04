@@ -1,8 +1,4 @@
-## Clase de C# .NET Core 8: Patrones Singleton, Adapter y Factory
-
-A continuación se presenta un documento en **Markdown** para guiar una clase práctica de C# (.NET 8) usando una aplicación de consola. Se incluyen explicaciones claras, ejemplos didácticos y minimalistas, utilizando únicamente nombres en español para clases y variables.
-
----
+# Clase de C# .NET Core 8: Patrones Singleton, Adapter y Factory
 
 ## 1. Preparación del proyecto de consola en .NET 8
 
@@ -61,12 +57,12 @@ A continuación se presenta un documento en **Markdown** para guiar una clase pr
 
 ### 2.1. Intención del patrón
 
-* **Garantizar** que una clase encargada de geolocalización tenga una única instancia durante toda la aplicación.
-* **Proveer** un punto de acceso global para obtener coordenadas o servicios de ubicación.
+* **Garantizar** que una clase tenga una única instancia durante toda la aplicación.
+* **Proveer** un punto de acceso global esta clase y sus funciones.
 
 ### 2.2. Contexto de uso
 
-* Cuando necesitamos un único directorio o servicio de geolocalización (por ejemplo, acceso a la misma API de mapas, caché de datos de ubicación).
+* Cuando necesitamos un único directorio, configuracion global o servicio de geolocalización (por ejemplo, acceso a la misma API de mapas, caché de datos de ubicación).
 * Evitar crear múltiples instancias que gestionen conexiones, tokens o configuraciones de la misma fuente de geolocalización.
 
 ### 2.3. Elementos imprescindibles

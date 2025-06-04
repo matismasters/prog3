@@ -1,3 +1,5 @@
+# Clase de C# .NET Core 8: Patrones Strategy, Decorator y Command
+
 ## 1. Preparación del proyecto de consola en .NET 8
 
 1. **Instalar/Verificar SDK .NET 8**
