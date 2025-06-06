@@ -121,30 +121,5 @@
 - **Information Expert** y **Controller** ayudan a asignar responsabilidades.
 - **Polymorphism**, **Indirection** y **Protected Variations** manejan el cambio.
 
-
-
-<!-- .slide: data-background="#0f2027" data-background-gradient="linear-gradient(to right, #2c5364, #203a43, #0f2027)" -->
-## Actividad en clase
-
-- **Caso práctico**:
-  - Diseña un sistema de reservas de hotel.
-  - Aplica al menos 3 patrones GRASP.
-  
-> Preguntas orientadoras
-1. ¿Quién debería crear las reservas?
-2. ¿Quién debe recibir las solicitudes de la UI?
-3. ¿Cómo evitarías un alto acoplamiento?
-
-
-
-<!-- .slide: data-background="#0f2027" data-background-gradient="linear-gradient(to right, #2c5364, #203a43, #0f2027)" -->
-## Preguntas y discusión
-
-- ¿Qué patrón consideras más difícil de aplicar?
-- ¿Crees que todos estos patrones son siempre necesarios?
-
-
-
 <!-- .slide: data-background="#0f2027" data-background-gradient="linear-gradient(to right, #2c5364, #203a43, #0f2027)" -->
 # ¡Gracias!
-## Preguntas finales
