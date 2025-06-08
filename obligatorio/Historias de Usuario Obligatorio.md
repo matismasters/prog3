@@ -97,13 +97,6 @@
 **Para** identificar rápidamente las zonas más activas.
 
 **Sugerencias de arquitectura**  
-- Servicio `ConsultaCiudadesActivas` que ejecute:  
-  ```csharp
-  var lista = _db.Actividades
-      .GroupBy(a => a.CiudadId)
-      .Select(g => new { CiudadId = g.Key, Total = g.Count() })
-      .OrderByDescending(x => x.Total);
-  ```  
 - Componente `TablaCiudades.razor` con cabecera de columna clicable para AJAX.
 
 **Criterios de aceptación**  
@@ -304,7 +297,7 @@
 ## EPIC 4: Módulo de Gestión de Partners y Alianzas
 
 ### Historia 4.1 (3 puntos)  
-**Como** local comercial  
+**Como** Partner  
 **Quiero** registrar mi negocio como partner (logo, descripción, ubicación)  
 **Para** aparecer marcado como “Verificado” en la app.
 

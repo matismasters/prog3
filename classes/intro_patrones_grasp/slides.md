@@ -3,17 +3,6 @@
 ### Una guía práctica para asignación de responsabilidades
 
 <!-- .slide: data-background="#0f2027" data-background-gradient="linear-gradient(to right, #2c5364, #203a43, #0f2027)" -->
-## **General**
-## **Responsibility**
-## **Assignment**
-## **Software**
-## **Patterns**
-
-<!-- .slide: data-background="#0f2027" data-background-gradient="linear-gradient(to right, #2c5364, #203a43, #0f2027)" -->
-
-### Una guía práctica para asignación de responsabilidades
-
-<!-- .slide: data-background="#0f2027" data-background-gradient="linear-gradient(to right, #2c5364, #203a43, #0f2027)" -->
 ## ¿Qué es GRASP?
 
 - Son patrones que nos ayudan a decidir **quién** debería hacer **qué** en un sistema.
