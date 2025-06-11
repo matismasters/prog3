@@ -5,6 +5,8 @@
 <!-- .slide: data-background="#0f2027" data-background-gradient="linear-gradient(to right, #2c5364, #203a43, #0f2027)" -->
 ## ¿Qué es GRASP?
 
+General Responsibility Assignment Software Patterns
+
 - Son patrones que nos ayudan a decidir **quién** debería hacer **qué** en un sistema.
 - ¿Qué clase debería tener qué responsabilidad?
 - ¿Cómo distribuir las responsabilidades entre objetos?
