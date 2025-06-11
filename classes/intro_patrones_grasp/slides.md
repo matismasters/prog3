@@ -82,6 +82,7 @@ General Responsibility Assignment Software Patterns
 ## 7. Pure Fabrication
 
 - Crear una clase "ficticia" para reducir acoplamiento o aumentar cohesión.
+- Cuando no hay una clase que naturalmente deba tener cierta responsabilidad, se puede crear una clase artificial (pero bien cohesionada) que la tenga, como los repositorios o servicios.
 
 > Ejemplo: **RepositorioDeUsuarios** para manejar la persistencia, separando lógica de negocio.
 
