@@ -5,6 +5,8 @@
 <!-- .slide: data-background="#0f2027" data-background-gradient="linear-gradient(to right, #2c5364, #203a43, #0f2027)" -->
 ## ¿Qué es GRASP?
 
+General Responsibility Assignment Software Patterns
+
 - Son patrones que nos ayudan a decidir **quién** debería hacer **qué** en un sistema.
 - ¿Qué clase debería tener qué responsabilidad?
 - ¿Cómo distribuir las responsabilidades entre objetos?
@@ -80,6 +82,7 @@
 ## 7. Pure Fabrication
 
 - Crear una clase "ficticia" para reducir acoplamiento o aumentar cohesión.
+- Cuando no hay una clase que naturalmente deba tener cierta responsabilidad, se puede crear una clase artificial (pero bien cohesionada) que la tenga, como los repositorios o servicios.
 
 > Ejemplo: **RepositorioDeUsuarios** para manejar la persistencia, separando lógica de negocio.
 
