@@ -33,8 +33,16 @@ En ASP.NET Core, el claim `ClaimTypes.NameIdentifier` suele mapearse al `sub` de
 
 ### 1.3 Instalar paquete de JWT
 
-```bash
+Si usas **NuGet Package Manager Console**, ejecuta:
+
+```powershell
 Install-Package Microsoft.AspNetCore.Authentication.JwtBearer -Version 8.0.0
+```
+
+Si prefieres **.NET CLI**, el comando es:
+
+```bash
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 8.0.0
 ```
 
 ### 1.4 Configurar autenticación en `Program.cs`
@@ -42,6 +50,12 @@ Install-Package Microsoft.AspNetCore.Authentication.JwtBearer -Version 8.0.0
 1. En **builder** (antes de `AddControllers()`):
 
 ```csharp
+
+// Leer valores de JWT desde appsettings.json
+var jwtKey      = builder.Configuration["Jwt:Key"];
+var jwtIssuer   = builder.Configuration["Jwt:Issuer"];
+var jwtAudience = builder.Configuration["Jwt:Audience"];
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -52,12 +66,14 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateLifetime         = true,
             ValidateIssuerSigningKey = true,
 
-            ValidIssuer              = "TuApp",
-            ValidAudience            = "TuApp",
+            // ahora leemos desde la configuración
+            ValidIssuer              = jwtIssuer,
+            ValidAudience            = jwtAudience,
             IssuerSigningKey         = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes("tu-clave-super-secreta-para-jwt"))
+                Encoding.UTF8.GetBytes(jwtKey))
         };
     });
+
 
 builder.Services.AddAuthorization();
 ```
@@ -69,50 +85,169 @@ app.UseAuthentication();
 app.UseAuthorization();
 ```
 
+### 1.4.1 Configuración en `appsettings.json`
+
+Agrega la sección **Jwt** en tu archivo `appsettings.json`:
+
+```json
+{
+  // ... otras secciones ...
+  "Jwt": {
+    "Key": "tu-clave-super-secreta-para-jwt",
+    "Issuer": "TuApp",
+    "Audience": "TuApp",
+    "DurationHours": 2
+  }
+}
+```
+
 ### 1.5 Generación de token: método `CrearToken`
 
-Implementa en un servicio o helper una función que:
-
-1. Reciba un objeto `Usuario`.
-2. Construya una lista de `Claim`:
-
-   * `new Claim(JwtRegisteredClaimNames.Sub, usuario.Id.ToString())`
-   * `new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString())`
-   * `new Claim(JwtRegisteredClaimNames.UniqueName, usuario.NombreUsuario)`
-3. Establezca fechas de emisión (`iat`) y expiración (`exp`).
-4. Genere el token firmado:
+Utiliza la siguiente implementación que lee la configuración desde `IConfiguration`:
 
 ```csharp
-public string CrearToken(Usuario usuario)
+using System;
+using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+
+// Alias para asegurarnos de usar el Claim correcto
+using JwtClaim = System.Security.Claims.Claim;
+
+namespace Artistas.Helpers
 {
-    var claims = new List<Claim>
+    public class Autentica
     {
-        new Claim(JwtRegisteredClaimNames.Sub, usuario.Id.ToString()),
-        new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString()),
-        new Claim(JwtRegisteredClaimNames.UniqueName, usuario.NombreUsuario),
-        new Claim(JwtRegisteredClaimNames.Iat,
-            DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString(), ClaimValueTypes.Integer64)
-    };
+        private readonly IConfiguration _config;
 
-    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("tu-clave-super-secreta-para-jwt"));
-    var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-    var expires = DateTime.UtcNow.AddHours(2);
+        public Autentica(IConfiguration config)
+        {
+            _config = config;
+        }
 
-    var token = new JwtSecurityToken(
-        issuer: "TuApp",
-        audience: "TuApp",
-        claims: claims,
-        expires: expires,
-        signingCredentials: creds
-    );
+        public string CrearToken(Usuario usuario)
+        {
+            // 1) Leer configuración de JWT
+            var key       = _config["Jwt:Key"];
+            var issuer    = _config["Jwt:Issuer"];
+            var audience  = _config["Jwt:Audience"];
+            var hours     = int.Parse(_config["Jwt:DurationHours"] ?? "2");
 
-    return new JwtSecurityTokenHandler().WriteToken(token);
+            // 2) Crear claims
+            var claims = new List<JwtClaim>
+            {
+                new JwtClaim(JwtRegisteredClaimNames.Sub, usuario.Id.ToString()),
+                new JwtClaim(ClaimTypes.NameIdentifier, usuario.Id.ToString()),
+                new JwtClaim(JwtRegisteredClaimNames.UniqueName, usuario.NombreUsuario),
+                new JwtClaim(
+                    JwtRegisteredClaimNames.Iat,
+                    DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString(),
+                    ClaimValueTypes.Integer64
+                )
+            };
+
+            // 3) Generar clave y credenciales
+            var symmetricKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
+            var creds        = new SigningCredentials(symmetricKey, SecurityAlgorithms.HmacSha256);
+
+            // 4) Fecha de expiración
+            var expires = DateTime.UtcNow.AddHours(hours);
+
+            // 5) Construir el token
+            var token = new JwtSecurityToken(
+                issuer:             issuer,
+                audience:           audience,
+                claims:             claims,
+                expires:            expires,
+                signingCredentials: creds
+            );
+
+            // 6) Serializar y devolver
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+    }
+
+    // Modelo Usuario para referencia
+    public class Usuario
+    {
+        public int    Id            { get; set; }
+        public string NombreUsuario { get; set; }
+    }
 }
 ```
 
 ---
 
-## 2. Ejercicio Práctico: Extensión de la API existente
+## 2. Ejemplo de uso de [Authorize]
+
+Antes de comenzar con los ejercicios prácticos, aquí un ejemplo de cómo aplicar la anotación `[Authorize]` en un controller:
+
+```csharp
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Artistas.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    [Authorize]
+    public class ArtistasController : ControllerBase
+    {
+        // Este endpoint requiere un token JWT válido
+        [HttpGet]
+        public IActionResult GetArtistas()
+        {
+            // lógica para obtener artistas del usuario autenticado
+            return Ok();
+        }
+
+        // Métodos sin [Authorize] en clase pueden tener [AllowAnonymous]
+        [AllowAnonymous]
+        [HttpGet("publico")]
+        public IActionResult GetPublico()
+        {
+            // lógica pública
+            return Ok();
+        }
+    }
+}
+```
+
+### 2.1 Ejemplo de petición para obtener el token
+
+Para generar el JWT, realiza una **POST** a `/api/usuarios/login` con un payload JSON como el siguiente:
+
+```json
+{
+  "nombreUsuario": "usuario1",
+  "password": "TuPassword123"
+}
+```
+
+La respuesta exitosa tendrá este formato:
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+
+### 2.2 Ejemplo de envío del token en una petición protegida
+
+Para llamar a un endpoint protegido, añade el header **Authorization** con el esquema `Bearer`:
+
+```
+GET /api/artistas HTTP/1.1
+Host: localhost:5000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+```
+
+En Swagger, ve a **Authorize** (ícono de candado), pega el valor `Bearer <tu-token>` y aplica.
+
+## 2. Ejercicio Práctico: Extensión de la API existente: Extensión de la API existente
 
 Los alumnos deben **extender** la API ya creada para añadir autenticación y vincular artistas al usuario.
 
@@ -168,6 +303,5 @@ Los alumnos deben **extender** la API ya creada para añadir autenticación y vi
   * Registro/login (token).
   * Creación, lectura, edición y borrado de artistas (incluyendo errores 401/403).
 * `README.md` que incluya:
-
   * Configuración de la clave JWT y connection string.
   * Pasos para registrar, loguear y usar el token en Swagger/Postman.
