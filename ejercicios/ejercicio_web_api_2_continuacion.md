@@ -34,7 +34,7 @@ En ASP.NET Core, el claim `ClaimTypes.NameIdentifier` suele mapearse al `sub` de
 ### 1.3 Instalar paquete de JWT
 
 ```bash
-dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+Install-Package Microsoft.AspNetCore.Authentication.JwtBearer -Version 8.0.0
 ```
 
 ### 1.4 Configurar autenticación en `Program.cs`
