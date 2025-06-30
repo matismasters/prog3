@@ -247,6 +247,37 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
 En Swagger, ve a **Authorize** (ícono de candado), pega el valor `Bearer <tu-token>` y aplica.
 
+### Si no ves el botón de **Authorize** en Swagger:
+Asegúrate de que tu `Program.cs` tenga la configuración correcta para Swagger:
+
+```csharp
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Artistas API", Version = "v1" });
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Ingrese 'Bearer' seguido de un espacio y su token JWT",
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey
+    });
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] {}
+        }
+    });
+});
+```
+
 ## 2. Ejercicio Práctico: Extensión de la API existente: Extensión de la API existente
 
 Los alumnos deben **extender** la API ya creada para añadir autenticación y vincular artistas al usuario.
