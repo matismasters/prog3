@@ -563,31 +563,56 @@ namespace PatronesAdicionales
 
 ## 5. Resumen y puntos clave para cada patrón
 
-| Patrón   | ¿Qué hace?                                                                                        | Elementos indispensables                        | ¿Cómo identificar “la forma correcta”? |
-| -------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------- | -------------------------------------- |
-| Strategy | Define una familia de algoritmos intercambiables y permite cambiar el comportamiento en ejecución | 1. Interfaz estrategia (`IEstrategiaDescuento`) |                                        |
+### Patrón: **Strategy**
 
-2. Clases concretas que implementan la interfaz (`DescuentoPorcentaje`, `DescuentoFijo`)
-3. Contexto (`CalculadoraVenta`) que usa la estrategia                     | - Existe una interfaz común con un método unificado (`CalcularDescuento`).
+**¿Qué hace?**  
+Define una familia de algoritmos intercambiables y permite cambiar el comportamiento de una clase en tiempo de ejecución, sin modificar su código.
 
-* Varias clases concretas implementan esa interfaz.
-* El contexto recibe la estrategia por constructor o la cambia en ejecución.
-* No hay condicionales para elegir el algoritmo dentro de la clase contexto.                                                                                                                                             |
-  \| Decorator | Agrega responsabilidades a un objeto de forma dinámica, sin modificar la clase original       | 1. Interfaz o clase base (`IBebida`)
+**Elementos indispensables:**
+- Interfaz de estrategia (por ejemplo: `IEstrategiaDescuento`)
+- Clases concretas que implementan la interfaz (`DescuentoPorcentaje`, `DescuentoFijo`)
+- Contexto (`CalculadoraVenta`) que utiliza la estrategia
 
-2. Clase base concreta (`CafeSimple`)
-3. Decoradores (`DecoradorLeche`, `DecoradorAzucar`) que implementan la misma interfaz y guardan referencia al objeto original | - Existe una interfaz común (`IBebida`).
+**¿Cómo identificar “la forma correcta”?**
+- Existe una interfaz común con un método unificado (`CalcularDescuento`)
+- Varias clases implementan esa interfaz con distintas lógicas
+- El contexto recibe la estrategia (por constructor, método o seteo) y puede cambiarla dinámicamente
+- No hay `if` o `switch` dentro del contexto para seleccionar qué algoritmo usar; esa responsabilidad se delega
 
-* Hay una clase base simple (`CafeSimple`) y decoradores que reciben un `IBebida` en su constructor.
-* Cada decorador añade comportamiento (p. ej., descripción o costo) y luego delega al objeto original.
-* No se crean subclases explosivas para cada combinación, sino objetos decorados en cadena.                                                                                                        |
-  \| Command   | Encapsula una petición (operación) como un objeto, desacoplando invocador de receptor          | 1. Interfaz comando (`IComando`)
+---
 
-2. Receptor que contiene la lógica real (`Lampara`)
-3. Comandos concretos (`ComandoEncenderLampara`, `ComandoApagarLampara`) que implementan `IComando` y delegan al receptor
-4. Invocador (`ControlRemoto`) que tiene un `IComando` y ejecuta `Ejecutar()` | - Existe una interfaz comando con método `Ejecutar()`.
+### Patrón: **Decorator**
 
-* Hay clases receptoras que definen las acciones concretas.
-* Los comandos concretos encapsulan la llamada al receptor.
-* El invocador no conoce la lógica interna del receptor; solo llama a `Ejecutar()` del comando.
-* Si el invocador llama directamente al receptor, no hay desacoplamiento y no se aplica el patrón Command.                                                                                      |
+**¿Qué hace?**  
+Agrega responsabilidades adicionales a un objeto de forma dinámica, sin modificar su clase original, evitando una explosión de subclases.
+
+**Elementos indispensables:**
+- Interfaz común o clase base (`IBebida`)
+- Clase concreta base (`CafeSimple`)
+- Decoradores (`DecoradorLeche`, `DecoradorAzucar`, etc.) que implementan la misma interfaz y envuelven el objeto original
+
+**¿Cómo identificar “la forma correcta”?**
+- Todos los elementos (base y decoradores) implementan la misma interfaz (`IBebida`)
+- Los decoradores reciben un `IBebida` en su constructor y almacenan esa referencia
+- Cada decorador agrega comportamiento propio y luego delega al objeto original
+- Se componen objetos decorados en cadena en lugar de crear subclases específicas para cada combinación
+
+---
+
+### Patrón: **Command**
+
+**¿Qué hace?**  
+Encapsula una petición u operación como un objeto independiente, desacoplando el invocador del receptor que realiza la acción.
+
+**Elementos indispensables:**
+- Interfaz de comando (`IComando`) con el método `Ejecutar()`
+- Receptor con la lógica real (por ejemplo: `Lampara`)
+- Comandos concretos (`ComandoEncenderLampara`, `ComandoApagarLampara`) que implementan `IComando` y llaman al receptor
+- Invocador (`ControlRemoto`) que almacena y ejecuta comandos
+
+**¿Cómo identificar “la forma correcta”?**
+- Hay una interfaz `IComando` con un método como `Ejecutar()`
+- Los comandos encapsulan toda la lógica necesaria para ejecutar una acción sobre el receptor
+- El invocador no conoce los detalles del receptor; solo ejecuta el comando
+- Si el invocador llama directamente al receptor, no hay desacoplamiento y no se aplica correctamente el patrón
+
