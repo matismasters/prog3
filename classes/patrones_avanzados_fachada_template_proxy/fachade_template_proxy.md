@@ -559,35 +559,59 @@ namespace PatronesAvanzados
   * Si no se retrasa la creación o no se agrega lógica adicional (caché o control de acceso), podría convertirse en un simple envoltorio innecesario.
 
 ---
-
 ## 5. Resumen y puntos clave para cada patrón
 
-| Patrón  | ¿Qué hace?                                                                                                        | Elementos indispensables                                                                        | ¿Cómo identificar “la forma correcta”? |
-| ------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------- |
-| Fachada | Simplifica la interacción con múltiples subsistemas complejos agrupando sus operaciones en una interfaz unificada | 1. **Subsistemas** independientes (`SubSistemaSensores`, `SubSistemaLuces`, `SubSistemaSonido`) |                                        |
+### Patrón: **Fachada (Facade)**
 
-2. **Clase Fachada** (`SistemaAlarma`) que coordina llamadas
-3. **Cliente** solo usa la Fachada, no los subsistemas                                                                                                                                                                                                      | - Existe una clase que reúne múltiples clases complejas (subsistemas) en métodos de alto nivel (`ActivarAlarma`, `DesactivarAlarma`).
+**¿Qué hace?**  
+Simplifica la interacción con múltiples subsistemas complejos agrupando sus operaciones en una única interfaz unificada.
 
-* El cliente solo interactúa con la Fachada.
-* Sin la Fachada, el cliente tendría que llamar a cada subsistema por separado, aumentando el acoplamiento y la complejidad.                                                                                                                                           |
-  \| MetodoPlantilla | Define la estructura general de un algoritmo en una clase abstracta, dejando pasos específicos a subclases              | 1. **Clase abstracta** (`AbstractoProcesoReporte`) con un **método plantilla** (`GenerarReporte`) que invoca pasos en orden fijo
+**Elementos indispensables:**
+- Subsistemas independientes (por ejemplo: `SubSistemaSensores`, `SubSistemaLuces`, `SubSistemaSonido`)
+- Clase Fachada (por ejemplo: `SistemaAlarma`) que coordina las llamadas entre subsistemas
+- Cliente que interactúa solamente con la clase Fachada
 
-2. **Métodos abstractos** (`GenerarCuerpo`) que las subclases implementan
-3. **Subclases concretas** (`ReporteVentas`, `ReporteInventario`) que proporcionan implementaciones de los pasos específicos                                                   | - Hay una clase abstracta con un método que define el flujo general (`PrepararEncabezado` → `GenerarCuerpo` → `AgregarPieDePagina`).
+**¿Cómo identificar “la forma correcta”?**
+- Existe una clase que reúne múltiples subsistemas y ofrece métodos de alto nivel (`ActivarAlarma`, `DesactivarAlarma`)
+- El cliente no necesita conocer los detalles de cada subsistema
+- Si el cliente debe llamar a cada subsistema por separado, se pierde la ventaja del patrón
 
-* Las subclases implementan solo los pasos que varían (`GenerarCuerpo`).
-* Si cada subclase repite el flujo completo, no se está usando Template Method.                                                                                                                                                                                                                        |
-  \| Proxy          | Proporciona un sustituto que controla el acceso a un objeto real, añadiendo lógica adicional (como carga perezosa, caché o seguridad) | 1. **Interfaz común** (`IRepositorioImagenes`)
+---
 
-2. **Clase real** (`RepositorioImagenesReal`) con lógica costosa
-3. **Proxy** (`RepositorioImagenesProxy`) que implementa la misma interfaz, crea el real bajo demanda, agrega caché y controla el acceso
-4. **Cliente** solo usa la interfaz, sin saber si es proxy o real | - Existe una interfaz que define operaciones (`ObtenerImagen`).
+### Patrón: **Método Plantilla (Template Method)**
 
-* Hay una clase real con lógica costosa.
-* El proxy implementa la misma interfaz, retrasa la creación del real y mantiene caché local.
-* El cliente llama siempre a la interfaz.
-* Si el proxy no delega o no implementa la interfaz, no cumple el patrón. |
+**¿Qué hace?**  
+Define la estructura general de un algoritmo en una clase abstracta, dejando algunos pasos específicos a las subclases.
+
+**Elementos indispensables:**
+- Clase abstracta (por ejemplo: `AbstractoProcesoReporte`) con un método plantilla (`GenerarReporte`) que define el flujo
+- Métodos abstractos (`GenerarCuerpo`, etc.) que serán implementados por las subclases
+- Subclases concretas (como `ReporteVentas` o `ReporteInventario`) que completan los pasos específicos del algoritmo
+
+**¿Cómo identificar “la forma correcta”?**
+- Hay un método plantilla que define el orden del algoritmo (`PrepararEncabezado` → `GenerarCuerpo` → `AgregarPieDePagina`)
+- Las subclases implementan únicamente los pasos variables, sin repetir el flujo general
+- Si cada subclase repite todo el flujo completo, no se está utilizando correctamente este patrón
+
+---
+
+### Patrón: **Proxy**
+
+**¿Qué hace?**  
+Proporciona un sustituto o intermediario que controla el acceso a un objeto real, añadiendo lógica extra como caché, carga perezosa o control de acceso.
+
+**Elementos indispensables:**
+- Interfaz común (por ejemplo: `IRepositorioImagenes`)
+- Clase real (`RepositorioImagenesReal`) que ejecuta operaciones costosas
+- Clase proxy (`RepositorioImagenesProxy`) que implementa la misma interfaz, instancia el real bajo demanda, y agrega funcionalidad adicional como caché
+- Cliente que usa únicamente la interfaz, sin saber si está usando el proxy o la clase real
+
+**¿Cómo identificar “la forma correcta”?**
+- Existe una interfaz común con métodos como `ObtenerImagen`
+- El proxy implementa la misma interfaz y actúa como intermediario (por ejemplo, instancia el real al necesitarlo)
+- El cliente nunca interactúa directamente con la clase real
+- Si el proxy no delega correctamente o no implementa la interfaz, no es un Proxy válido
+
 
 ---
 
