@@ -110,7 +110,7 @@ El uso de IA no reemplaza la comprensión de los conceptos ni la defensa oral de
 - Integración en el flujo: compilar, ejecutar tests (`dotnet test`) y documentar como ciclo con apoyo de IA.
 
 #### Actividades
-- Dado un pequeño módulo de código C#, generar con IA un conjunto de pruebas unitarias, ejecutarlas y completar o corregir lo que falle.
+- Las actividades se realizan sobre **código de ejemplo proporcionado por el docente** o un **mini proyecto guiado** (aún no se ha visto persistencia ni arquitectura en capas en el curso). Dado un pequeño módulo de código C#, generar con IA un conjunto de pruebas unitarias, ejecutarlas y completar o corregir lo que falle.
 - Refactorizar un fragmento de código “sucio” con ayuda de IA y documentar qué cambios se hicieron y por qué.
 - Redactar documentación (XML + README) para un mini proyecto con apoyo de IA y revisar que sea precisa y útil.
 
@@ -295,7 +295,7 @@ El uso de IA no reemplaza la comprensión de los conceptos ni la defensa oral de
 ### Unidad 14: Patrones de diseño — Repository, Unit of Work y Dependency Injection
 
 #### Objetivos
-- Implementar en una o dos clases los patrones Repository, Unit of Work y Dependency Injection.
+- Implementar en **una semana (dos clases)** los patrones Repository, Unit of Work y Dependency Injection.
 - Aplicar principios SOLID en el diseño y registrar dependencias en el contenedor de ASP.NET Core.
 - Introducir pruebas unitarias con `dotnet test` y uso de IA para generarlas y revisarlas (apoyándose en lo visto en las Unidades 1 a 4).
 
@@ -306,7 +306,7 @@ El uso de IA no reemplaza la comprensión de los conceptos ni la defensa oral de
 - Pruebas unitarias en .NET desde CLI (`dotnet test`). Uso de IA para generar y completar pruebas; revisión y criterios de calidad.
 
 #### Actividades
-- Implementar Repository, Unit of Work y DI en una aplicación ASP.NET Core en el marco de una o dos clases.
+- Implementar Repository, Unit of Work y DI en una aplicación ASP.NET Core en el marco de esa semana (dos clases).
 - Escribir pruebas unitarias para la lógica de negocio con apoyo de IA y revisar cobertura y pertinencia.
 
 ---
@@ -337,7 +337,7 @@ El uso de IA no reemplaza la comprensión de los conceptos ni la defensa oral de
 
 #### Temas de clase
 - Configuración avanzada de Web API y integración con front-end o clientes externos.
-- Revisión de criterios de evaluación: aplicación Full-Stack, persistencia compleja, **integración con API de modelo LLM** (p. ej. Hugging Face), pruebas unitarias y documentación; calidad del código y uso documentado de IA.
+- Revisión de criterios de evaluación: aplicación Full-Stack, persistencia compleja, **integración con API de modelo LLM** (p. ej. Hugging Face), pruebas unitarias y documentación; calidad del código y **uso de IA documentado** (prompts, requerimientos, planes de implementación, revisión del resultado).
 - Uso de IA en el ciclo de desarrollo: resumen y buenas prácticas de uso responsable (retomando Unidades 1 a 4).
 
 #### Actividades
@@ -353,8 +353,9 @@ El uso de IA no reemplaza la comprensión de los conceptos ni la defensa oral de
 
 - **Parcial 1:** Semana 8 (25% de la nota final).
 - **Parcial 2:** Semana 16 (25% de la nota final).
-- **Trabajo obligatorio:** Entrega en la semana indicada por el docente. Debe incluir arquitectura en capas, patrones de diseño (Repository, Unit of Work, Dependency Injection), integración con **al menos una API de terceros (por ejemplo API de un modelo LLM, p. ej. Hugging Face)**, persistencia con Entity Framework, pruebas unitarias y documentación técnica. El uso de IA en generación de pruebas, refactorización y documentación debe quedar explícito y revisado por el estudiante. La aplicación debe ser correcta en funcionalidad, con **validaciones completas**, **código mantenible** y **buena arquitectura**.
-- **Defensa:** Defensa de la aplicación Full-Stack ante tribunal o docente (requisito para la acreditación del trabajo obligatorio).
+- **Trabajo obligatorio:** 30% de la nota final. Entrega: fecha a definir. Debe incluir arquitectura en capas, patrones de diseño (Repository, Unit of Work, Dependency Injection), integración con **al menos una API de terceros (por ejemplo API de un modelo LLM, p. ej. Hugging Face)**, persistencia con Entity Framework, pruebas unitarias y documentación técnica. El **uso de IA documentado** incluye prompts utilizados, requerimientos o especificaciones dadas a la IA, planes de implementación y revisión del resultado por el estudiante. La aplicación debe ser correcta en funcionalidad, con **validaciones completas**, **código mantenible** y **buena arquitectura**.
+- **Participación, disciplina e involucramiento:** 20% de la nota final (asistencia, participación en clase e involucramiento con las actividades).
+- **Defensa:** Defensa de la aplicación Full-Stack ante tribunal o docente (requisito para la acreditación del trabajo obligatorio). El formato de evaluación de la defensa es el estándar de la carrera.
 - **Puntaje final:** Se dará a conocer la semana siguiente a la última clase.
 
 ### Acreditación
