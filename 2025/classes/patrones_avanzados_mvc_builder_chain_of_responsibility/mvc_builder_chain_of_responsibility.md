@@ -649,33 +649,58 @@ namespace PatronesAvanzados
 
 ## 5. Resumen y puntos clave para cada patrón
 
-| Patrón                      | ¿Qué hace?                                                                                                                                    | Elementos indispensables                                                        | ¿Cómo identificar “la forma correcta”? |
-| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | -------------------------------------- |
-| MVC (Model–View–Controller) | Separa la lógica de negocio (modelo), la presentación (vista) y el control de flujo (controlador), facilitando mantenimiento y escalabilidad. | 1. **Modelo** (`ModeloProducto`) que contiene datos y lógica de negocio mínima. |                                        |
+### Patrón: **MVC (Model–View–Controller)**
 
-2. **Vista** (`VistaProducto`) que presenta información al usuario.
-3. **Controlador** (`ControladorProducto`) que coordina modelo y vista.                                                                                                                           | - Hay un **modelo** independiente de la vista.
+**¿Qué hace?**  
+Separa la lógica de negocio (modelo), la presentación (vista) y el control de flujo (controlador), facilitando el mantenimiento y la escalabilidad de aplicaciones.
 
-* Existe una **vista** que no contiene lógica de negocio.
-* El **controlador** recibe comandos del cliente, actualiza el modelo y ordena a la vista qué mostrar.
-* Si la lógica de datos y la de presentación están mezcladas, no es MVC.                                                                                                                                                                |
-  \| Builder                  | Encapsula la construcción de objetos complejos paso a paso, mediante un `Director` que coordina un `Constructor` concreto para armar el producto final. | 1. **Clase ProductoComplejo** que representa el objeto final.
+**Elementos indispensables:**
+- **Modelo** (por ejemplo: `ModeloProducto`) que contiene los datos y la lógica de negocio mínima
+- **Vista** (`VistaProducto`) que presenta la información al usuario sin lógica de negocio
+- **Controlador** (`ControladorProducto`) que coordina el modelo y la vista
 
-2. **Interfaz constructor** (`IConstructorProducto`) con métodos de construcción.
-3. **Constructores concretos** (`ConstructorConMotor`, `ConstructorSinMotor`) que implementan la interfaz.
-4. **Director** (`DirectorProducto`) que orquesta los pasos en orden fijo.                                         | - Existe un objeto que se construye en varios pasos en lugar de un solo constructor.
+**¿Cómo identificar “la forma correcta”?**
+- Hay un **modelo** independiente de la vista
+- La **vista** no contiene lógica de negocio, solo muestra datos
+- El **controlador** recibe acciones del usuario, actualiza el modelo y ordena qué debe mostrar la vista
+- Si la lógica de datos y la de presentación están mezcladas, no se está utilizando correctamente el patrón MVC
 
-* Hay un **Director** que llama a los métodos del constructor en un orden específico.
-* El cliente solicita el producto a través del Director, sin conocer detalles internos.
-* Si el cliente arma todas las partes manualmente, no se está usando Builder.                                                                                                                                                                 |
-  \| CadenaResponsabilidad    | Pasa una petición a lo largo de una cadena de objetos manejadores hasta que alguno la procese, desacoplando emisor y receptor.                        | 1. **Clase Solicitud** que envuelve la petición.
+---
 
-2. **Interfaz** (`IProcesadorSolicitud`) que define `SetSiguiente` y `Procesar`.
-3. **Procesadores concretos** (`ProcesadorBasico`, `ProcesadorAvanzado`, `ProcesadorExperto`) que deciden si procesan o delegan.
-4. Cliente configura la cadena y envía la solicitud al primer procesador. | - Existe una **cadena** de manejadores en la que cada uno decide si atiende la solicitud o la pasa al siguiente.
+### Patrón: **Builder**
 
-* El **cliente** desconoce cuál será el manejador final; sólo invoca al inicio de la cadena.
-* Si el cliente decide directamente el manejador, no es Cadena de Responsabilidad.                                                                                                                                                          |
+**¿Qué hace?**  
+Encapsula la construcción de objetos complejos paso a paso, usando un `Director` que coordina a un constructor concreto para armar el producto final.
+
+**Elementos indispensables:**
+- **Producto complejo** (`ProductoComplejo`) que representa el objeto final
+- **Interfaz constructor** (`IConstructorProducto`) con métodos para construir las partes
+- **Constructores concretos** (como `ConstructorConMotor`, `ConstructorSinMotor`) que implementan la interfaz
+- **Director** (`DirectorProducto`) que orquesta los pasos en un orden específico
+
+**¿Cómo identificar “la forma correcta”?**
+- Existe un objeto que se construye en varios pasos en lugar de un único constructor
+- El **Director** llama a los métodos del constructor en un orden fijo
+- El cliente solicita el producto a través del Director, sin involucrarse en los detalles de construcción
+- Si el cliente arma todas las partes manualmente, no se está aplicando el patrón Builder
+
+---
+
+### Patrón: **Cadena de Responsabilidad (Chain of Responsibility)**
+
+**¿Qué hace?**  
+Permite pasar una petición a lo largo de una cadena de objetos manejadores hasta que alguno la procese, desacoplando al emisor del receptor.
+
+**Elementos indispensables:**
+- **Solicitud** (`Solicitud`) que encapsula la petición
+- **Interfaz** (`IProcesadorSolicitud`) con métodos `SetSiguiente` y `Procesar`
+- **Procesadores concretos** (`ProcesadorBasico`, `ProcesadorAvanzado`, `ProcesadorExperto`) que deciden si procesan o delegan
+- Cliente que configura la cadena y envía la solicitud al primer procesador
+
+**¿Cómo identificar “la forma correcta”?**
+- Hay una **cadena** de manejadores, y cada uno decide si procesa o pasa la solicitud al siguiente
+- El **cliente** desconoce cuál será el manejador final; solo inicia el proceso en la cabeza de la cadena
+- Si el cliente elige explícitamente qué manejador usar, no se está aplicando correctamente este patrón
 
 ---
 

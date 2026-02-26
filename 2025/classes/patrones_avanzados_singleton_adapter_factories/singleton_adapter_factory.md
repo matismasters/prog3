@@ -460,27 +460,54 @@ namespace AplicacionPatrones
 
 ## 5. Resumen y puntos clave para cada patrón
 
-| Patrón    | ¿Qué hace?                                                                     | Elementos indispensables | ¿Cómo identificar “la forma correcta”? |
-| --------- | ------------------------------------------------------------------------------ | ------------------------ | -------------------------------------- |
-| Singleton | Garantiza una única instancia global (p. ej., del servicio de geolocalización) | 1. Constructor `private` |                                        |
+### Patrón: **Singleton**
 
-2. Campo estático
-3. Método público estático que retorne/la cree
-4. (Opcional) Clase `sealed` para evitar herencia                                                            | - Existe un método estático (`ObtenerInstancia`) que devuelve siempre la misma referencia
+**¿Qué hace?**  
+Garantiza una única instancia global (por ejemplo, del servicio de geolocalización).
 
-* No hay forma de usar `new` desde fuera
-* Si falta cualquiera de estos, no se está implementando claramente el patrón                                                                                                                                                       |
-  \| Adapter   | Convierte la interfaz de un enchufe de 3 patillas en la interfaz que espera una toma Schuko      | 1. Interfaz destino (`IEnchufeDestino`)
+**Elementos indispensables:**
+- Constructor `private`
+- Campo estático
+- Método público estático que retorne o cree la instancia
+- (Opcional) Clase `sealed` para evitar herencia
 
-2. Clase `EnchufeTresPatillas` con método incompatible
-3. Clase `AdaptadorEnchufe` que implemente `IEnchufeDestino` y contenga internamente a `EnchufeTresPatillas` | - El cliente conoce solo `IEnchufeDestino`, no “EnchufeTresPatillas”
+**¿Cómo identificar “la forma correcta”?**
+- Existe un método estático (por ejemplo, `ObtenerInstancia`) que devuelve siempre la misma referencia
+- No hay forma de usar `new` desde fuera
+- Si falta cualquiera de estos elementos, no se está implementando claramente el patrón
 
-* `AdaptadorEnchufe` implementa `IEnchufeDestino` y traduce internamente a `EnchufeTresPatillas`
-* Si no hay traducción o no implementa la interfaz destino, no hay Adapter                                                                                                                     |
-  \| Factory   | Encapsula la creación de vehículos, devolviendo instancias a través de un método fábrica        | 1. Interfaz (`IVehiculo`)
+---
 
-2. Clases concretas (`Coche`, `Moto`, …)
-3. Clase fábrica con método estático (`Crear`) que devuelva `IVehiculo` según parámetro                                 | - El cliente nunca llama `new` directamente a la clase concreta
+### Patrón: **Adapter**
 
-* Hay un punto único (FábricaVehiculo) que devuelve la interfaz `IVehiculo`
-* Si el cliente hace `new` o no existe interfaz común, no es Factory Method                                                         
+**¿Qué hace?**  
+Convierte una interfaz incompatible en otra esperada, como adaptar un enchufe de 3 patillas a una toma Schuko.
+
+**Elementos indispensables:**
+- Interfaz destino (por ejemplo, `IEnchufeDestino`)
+- Clase existente con interfaz incompatible (`EnchufeTresPatillas`)
+- Clase adaptadora (`AdaptadorEnchufe`) que:
+  - Implemente `IEnchufeDestino`
+  - Contenga internamente a `EnchufeTresPatillas`
+
+**¿Cómo identificar “la forma correcta”?**
+- El cliente conoce solo la interfaz destino (`IEnchufeDestino`), no la clase original
+- La clase adaptadora traduce internamente entre interfaces
+- Si no se implementa la interfaz o no hay traducción interna, **no** es un Adapter
+
+---
+
+### Patrón: **Factory Method**
+
+**¿Qué hace?**  
+Encapsula la creación de objetos (como vehículos), devolviendo instancias a través de un método fábrica.
+
+**Elementos indispensables:**
+- Interfaz común (por ejemplo, `IVehiculo`)
+- Clases concretas (`Coche`, `Moto`, etc.)
+- Clase fábrica con método estático (por ejemplo, `Crear`) que devuelva una instancia según el parámetro
+
+**¿Cómo identificar “la forma correcta”?**
+- El cliente nunca instancia clases concretas con `new`
+- Hay un punto único de creación (como `FábricaVehiculo`) que devuelve la interfaz
+- Si el cliente instancia directamente o no hay una interfaz común, **no** es Factory Method
