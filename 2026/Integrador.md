@@ -176,16 +176,16 @@ Estos puntos serán comunes a todas las asignaturas.
 
 Se distribuirán de la siguiente forma:
 
-**1. Funcionalidades creativas (10 puntos)**
+**1. Funcionalidades creativas**
 Implementación de al menos dos funcionalidades originales, no desarrolladas por otros equipos, correctamente implementadas y justificadas.
 
-**2. Funcionalidades clave (15 puntos)**
+**2. Funcionalidades clave**
 Implementación adecuada de las funcionalidades centrales requeridas por la empresa.
 
-**3. Uso de Inteligencia Artificial (10 puntos)**
+**3. Uso de Inteligencia Artificial**
 Uso documentado, estratégico y técnicamente justificado de herramientas de IA.
 
-**4. Mantenibilidad y escalabilidad (15 puntos)**
+**4. Mantenibilidad y escalabilidad**
 Calidad estructural de la solución: diseño, modularidad, normalización de datos, separación de responsabilidades, posibilidad de evolución futura.
 
 ---
