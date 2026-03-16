@@ -29,10 +29,10 @@ Este curso profundiza los conocimientos de Programación 2 con un enfoque en el 
 
 La Inteligencia Artificial es parte explícita del plan 2026. En este curso se utiliza como una herramienta para acelerar tareas repetitivas, explorar alternativas de diseño y mejorar la calidad del código. **Las primeras cuatro semanas del semestre** se dedican íntegramente a IA (herramientas, IDE, CLI, limitaciones, uso responsable, práctica con pruebas/refactor/documentación y comparación de modelos), utilizando únicamente **opciones con versión gratuita**. Una vez incorporado ese bagaje, se espera que el estudiante **use la IA en todas las unidades siguientes** del curso. Por tanto:
 
-- Utilices un IDE ligero y la **línea de comandos** para compilar, ejecutar y probar aplicaciones .NET (`dotnet build`, `dotnet run`, `dotnet test`).
-- Utilices asistentes de código (por ejemplo Cursor, GitHub Copilot para estudiantes, o equivalentes) **durante todo el semestre** en las unidades 5 a 16.
-- Conozcas las **limitaciones** de la programación con IA (modelos pequeños vs grandes, contexto, mantenibilidad) y apliques criterios de calidad al revisar código generado.
-- Generes o complementes pruebas unitarias, refactorización y documentación técnica con apoyo de IA, y revises su pertinencia y corrección.
+- Utilizar un IDE ligero y la **línea de comandos** para compilar, ejecutar y probar aplicaciones .NET (`dotnet build`, `dotnet run`, `dotnet test`).
+- Utilizar asistentes de código (por ejemplo Cursor, Antigravity, GitHub Copilot para estudiantes, o equivalentes) **durante todo el semestre** en las unidades 5 a 16.
+- Conocer las **limitaciones** de la programación con IA (modelos pequeños vs grandes, contexto, mantenibilidad) y aplicar criterios de calidad al revisar código generado.
+- Generar o complementar pruebas unitarias, refactorización y documentación técnica con apoyo de IA, y revisar su pertinencia y corrección.
 
 El uso de IA no reemplaza la comprensión de los conceptos ni la defensa oral del proyecto; ambos siguen siendo evaluados.
 
@@ -366,11 +366,7 @@ El uso de IA no reemplaza la comprensión de los conceptos ni la defensa oral de
 
 ---
 
-*Documento adaptado al Plan 2026 — Integración transversal de IA, especialización .NET y orientación a producción profesional.*
-
----
-
-## Apéndice: Contexto sobre Hugging Face (para el docente)
+## Apéndice: Hugging Face 
 
 **Qué es:** Hugging Face es una plataforma de modelos de ML/LLM con un **Inference API serverless** que permite llamar a modelos por REST sin desplegar infraestructura. Ideal para el curso porque hay tier gratuito y muchos modelos públicos.
 
