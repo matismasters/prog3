@@ -287,7 +287,7 @@ La herramienta puede participar en distintas etapas: planear, generar borradores
 
 # No quiero esto
 
-- Abrir editor
+- Nunca abrir el editor
 - Tirar prompt gigante
 - Esperar magia
 
