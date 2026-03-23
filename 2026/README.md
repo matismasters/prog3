@@ -385,3 +385,26 @@ Ejemplo: `https://api-inference.huggingface.co/models/meta-llama/Llama-3.2-3B-In
 **Desde .NET:** No hay SDK oficial en C#. Se usa `HttpClient` con `Authorization: Bearer {token}`, serialización con `System.Text.Json` y deserialización de la respuesta. Encapsular en un servicio inyectable (por ejemplo `IHuggingFaceClient`) mantiene la capa de presentación desacoplada.
 
 **Modelos sugeridos para prácticas:** Qwen2.5 (varios tamaños), Llama 3.2, Gemma 2, DeepSeek-R1 (razonamiento). Buscar en [huggingface.co/models](https://huggingface.co/models) con filtro “Inference API” o “text-generation-inference”. Playground: [huggingface.co/playground](https://huggingface.co/playground) para probar prompts antes de codificar.
+
+---
+
+## Seguimiento de unidades (docente)
+
+Marcá cada unidad a medida que dictás las clases. En Markdown: `- [ ]` sin marcar, `- [x]` completada.
+
+- [x] **Unidad 1:** IA en el desarrollo — Herramientas, IDE y CLI
+- [ ] **Unidad 2:** Limitaciones y uso responsable de la IA en programación
+- [ ] **Unidad 3:** IA aplicada — Pruebas unitarias, refactorización y documentación
+- [ ] **Unidad 4:** Comparación de modelos y cierre del bloque IA
+- [ ] **Unidad 5:** Repaso de POO y análisis/diseño de aplicaciones
+- [ ] **Unidad 6:** Persistencia de datos en aplicaciones web
+- [ ] **Unidad 7:** Entity Framework y ORM
+- [ ] **Unidad 8:** Patrones arquitectónicos — Arquitectura en capas
+- [ ] **Unidad 9:** ASP.NET Core MVC — Repaso y avance
+- [ ] **Unidad 10:** ASP.NET Core MVC — AJAX y actualización de vistas
+- [ ] **Unidad 11:** Integración de ASP.NET Core MVC con Entity Framework
+- [ ] **Unidad 12:** Introducción a los servicios web
+- [ ] **Unidad 13:** Consumo de APIs — Comunicación con modelos LLM (Hugging Face)
+- [ ] **Unidad 14:** Patrones de diseño — Repository, Unit of Work y Dependency Injection
+- [ ] **Unidad 15:** Web API en ASP.NET Core
+- [ ] **Unidad 16:** Integración Full-Stack y cierre

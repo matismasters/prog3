@@ -270,7 +270,7 @@
 # Herramientas IA
 
 - Cursor
-- Copilot
+- Antigravity
 - ChatGPT
 - Otras
 
