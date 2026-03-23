@@ -1,16 +1,6 @@
 # Programacion 3 2026
 ## Clase 3
 
----
-
-# Matias Verges
-
-- Analista en Tecnologias de la Informacion
-- 15+ anos de experiencia
-- `matis@matis.io`
-
----
-
 # Hoy
 
 - Inicio Unidad 2
@@ -67,7 +57,7 @@ No hace falta memorizar una lista hoy. Quiero que estas categorias les suenen cu
 - Prueben en el navegador seguido
 - Anoten fricciones y sorpresas
 
-Les voy a dar requerimientos escritos para la pagina. El objetivo no es solo "terminar": es ver como responde la herramienta cuando el pedido es concreto y cuando es ambiguo, y que ustedes corrijan y afinen.
+Les voy a dar requerimientos para la pagina. El objetivo no es solo "terminar": es ver como responde la herramienta cuando el pedido es concreto y cuando es ambiguo, y que ustedes corrijan y afinen.
 
 ---
 

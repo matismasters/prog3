@@ -1,16 +1,6 @@
 # Programacion 3 2026
 ## Clase 4
 
----
-
-# Matias Verges
-
-- Analista en Tecnologias de la Informacion
-- 15+ anos de experiencia
-- `matis@matis.io`
-
----
-
 # Hoy
 
 - Cierre Unidad 2
