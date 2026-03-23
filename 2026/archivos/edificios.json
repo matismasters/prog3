@@ -1,0 +1,536 @@
+{
+  "extractedAt": "2026-03-23",
+  "count": 53,
+  "buildings": [
+    {
+      "name": "The Belden-Stratford",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/643836bc762b5b78848b08a6_Belden-Stratford%20.jpg",
+      "neighborhood": "Lincoln Park",
+      "address": "2300 N Lincoln Park",
+      "management": "Waterton",
+      "ownership": "",
+      "units": 209,
+      "buildingUrl": "https://search.rentlife.com/buildings/2300-north-lincoln-park-west"
+    },
+    {
+      "name": "330 South Wells",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61771ff11568fd11ff666901_Phot35o.png",
+      "neighborhood": "South Loop",
+      "address": "330 S Wells St",
+      "management": "Cagan Realty",
+      "ownership": "LG Development",
+      "units": 132,
+      "buildingUrl": "https://search.rentlife.com/buildings/330-south-wells-st"
+    },
+    {
+      "name": "The Jax",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/627c1fd29073aa4c27aedee9_The-Jax-Apartments_Aerial-283x268.jpg",
+      "neighborhood": "Near West Side",
+      "address": "1220 W Jackson",
+      "management": "Cagan management",
+      "ownership": "Cagan",
+      "units": 166,
+      "buildingUrl": "https://search.rentlife.com/buildings/1220-west-jackson"
+    },
+    {
+      "name": "Edge on Broadway",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61771db2b4222b1cdf66b41e_Photo23.png",
+      "neighborhood": "Edgewater",
+      "address": "6149 N Broadway",
+      "management": "Cagan Management",
+      "ownership": "Cagan",
+      "units": 105,
+      "buildingUrl": "https://search.rentlife.com/buildings/6149-north-broadway-st"
+    },
+    {
+      "name": "AM 1980",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61771f61fe13ffd7591984da_Photo132.png",
+      "neighborhood": "Bucktown",
+      "address": "1980 N Milwaukee Ave",
+      "management": "33 Realty",
+      "ownership": "Clayco CRG",
+      "units": 132,
+      "buildingUrl": "https://search.rentlife.com/buildings/1980-north-milwaukee-ave"
+    },
+    {
+      "name": "Nevele",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61967dd90ffe9774c5bb70a8_1122%20W%20Chicago.jpg",
+      "neighborhood": "River West",
+      "address": "1122 W Chicago Ave",
+      "management": "Lipe Properties",
+      "ownership": "Lipe Properties",
+      "units": 76,
+      "buildingUrl": "https://search.rentlife.com/buildings/1122-west-chicago-ave"
+    },
+    {
+      "name": "Addams Co-Living",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61967d71d4ec5c5b857815a1_1407%20W%2015th%20Street.jpg",
+      "neighborhood": "Pilsen",
+      "address": "1407 W 15th St",
+      "management": "CityZen",
+      "ownership": "CityPads",
+      "units": 223,
+      "buildingUrl": "https://search.rentlife.com/buildings/1407-west-15th-st"
+    },
+    {
+      "name": "Pilsen Co-Living",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61967d5fbdb4963f13e2330b_1831%20S%20racine.jpg",
+      "neighborhood": "Pilsen",
+      "address": "1831 S Racine Ave",
+      "management": "High Fidelity",
+      "ownership": "CityPads",
+      "units": 42,
+      "buildingUrl": "https://search.rentlife.com/buildings/1831-south-racine-ave"
+    },
+    {
+      "name": "Marquee at Block 37",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61771c41ac02e5252d090b6c_Ph1oto.png",
+      "neighborhood": "Loop",
+      "address": "25 W Randolph St",
+      "management": "Morguard",
+      "ownership": "Morguard",
+      "units": 690,
+      "buildingUrl": null
+    },
+    {
+      "name": "The Shelby",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61771c0b3f896966bbe8adff_Photo6.png",
+      "neighborhood": "South Loop",
+      "address": "2300 S Michigan Ave",
+      "management": "Marc Realty Residential",
+      "ownership": "Marc Realty Residential",
+      "units": 94,
+      "buildingUrl": null
+    },
+    {
+      "name": "Alta at K Station",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61771be9f7f3f95a63d243d9_1Photo.png",
+      "neighborhood": "River North",
+      "address": "555 W Kinzie St",
+      "management": "Morguard",
+      "ownership": "Morguard",
+      "units": 848,
+      "buildingUrl": null
+    },
+    {
+      "name": "Coast at Lakeshore East",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/6171c564f5194789e55f00cb_coast-top-slide-1.jpg",
+      "neighborhood": "Lakeshore East",
+      "address": "345 E Wacker Dr",
+      "management": "Morguard",
+      "ownership": "Morguard",
+      "units": 515,
+      "buildingUrl": null
+    },
+    {
+      "name": "Fenestra",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61771bb97b1d35baa05ac552_2Photo.png",
+      "neighborhood": "Rockville, MD",
+      "address": "20 Maryland Ave",
+      "management": "Morguard",
+      "ownership": "Morguard",
+      "units": 497,
+      "buildingUrl": null
+    },
+    {
+      "name": "Imprint",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61771b6c3960fe777da02d07_Photo.png",
+      "neighborhood": "South Loop",
+      "address": "717 S Clark St",
+      "management": "Greystar",
+      "ownership": "CMK Companies",
+      "units": 349,
+      "buildingUrl": "https://search.rentlife.com/buildings/717-south-clark-st"
+    },
+    {
+      "name": "640 North Wells",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61771fb579061539802e973c_Phot456o.png",
+      "neighborhood": "River North",
+      "address": "640 N Wells St",
+      "management": "The Habitat Company",
+      "ownership": "GID and JDL Dev.",
+      "units": 250,
+      "buildingUrl": null
+    },
+    {
+      "name": "Avenir",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/6177204382db1839a06a7ca6_Photo53.png",
+      "neighborhood": "River West",
+      "address": "730 N Milwaukee Ave",
+      "management": "Tandem",
+      "ownership": "Tandem",
+      "units": 186,
+      "buildingUrl": "https://search.rentlife.com/buildings/730-north-milwaukee-ave"
+    },
+    {
+      "name": "The X Chicago",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/6177218e7e333099c8f9566d_P789hoto.png",
+      "neighborhood": "University Village",
+      "address": "710 W 14th St",
+      "management": "KMS",
+      "ownership": "Property Markets Gr.",
+      "units": 132,
+      "buildingUrl": null
+    },
+    {
+      "name": "853 North Larrabee",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61967ca393f2df5bf1b2acc8_853%20N%20Larrabee.jpg",
+      "neighborhood": "River North",
+      "address": "853 N Larrabee St",
+      "management": "Domus Group",
+      "ownership": "Domus Group",
+      "units": 42,
+      "buildingUrl": "https://search.rentlife.com/buildings/853-north-larrabee"
+    },
+    {
+      "name": "46 E Chicago Ave",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61967d7e10cffb65da0260e9_46%20E%20Chicago%20Ave.jpg",
+      "neighborhood": "Gold Coast",
+      "address": "46 E Chicago Ave",
+      "management": "Honore Properties",
+      "ownership": "Honore Properties",
+      "units": 40,
+      "buildingUrl": "https://search.rentlife.com/buildings/46-east-chicago"
+    },
+    {
+      "name": "The Dunham",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61967dc723dedfcd25710595_7000%20S%20South%20Shore%20Dr.jpg",
+      "neighborhood": "South Shore",
+      "address": "7000 S South Shore Dr",
+      "management": "Belveron Partners",
+      "ownership": "Belveron Partners",
+      "units": 40,
+      "buildingUrl": null
+    },
+    {
+      "name": "6825 N Sheridan Rd",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/65a1756356d9192c8b6f66f1_HSK08444.jpg",
+      "neighborhood": "Rogers Park",
+      "address": "6825 N Sheridan Rd",
+      "management": "Cagan Management",
+      "ownership": "Cagan Management",
+      "units": 80,
+      "buildingUrl": "https://www.cagan.com/apartments/il/chicago/6825-sheridan-rd/index.aspx"
+    },
+    {
+      "name": "8540 Niles Center Road",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/65a17e2462a303bdee9555c4_Exterior-7-cropped.jpg",
+      "neighborhood": "Skookie",
+      "address": "8540 Niles Center Road",
+      "management": "Cagan Management",
+      "ownership": "Niles Center 8540 Associates LLC",
+      "units": 54,
+      "buildingUrl": "http://www.cagan.com/apartments/il/skokie/8540-60-niles-center-road/index.aspx"
+    },
+    {
+      "name": "4906-28 Conrad St",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/65a17f05b0a452f30c561af6_Exterior%20(1).jpg",
+      "neighborhood": "Skookie",
+      "address": "4906-28 Conrad St",
+      "management": "Cagan Management",
+      "ownership": "Cagan Management",
+      "units": 44,
+      "buildingUrl": "http://www.cagan.com/apartments/il/skokie/4906-28-conrad/index.aspx"
+    },
+    {
+      "name": "1351-1359 W Touhy Ave",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/65a182bde5ca4eb6b36f28f2_courtyard.jpg",
+      "neighborhood": "Rogers Park",
+      "address": "1351-1359 W Touhy Ave",
+      "management": "Cagan Management",
+      "ownership": "Cagan Management",
+      "units": 43,
+      "buildingUrl": "http://www.cagan.com/apartments/il/chicago/1351-w-touhy-ave/index.aspx"
+    },
+    {
+      "name": "1121 Church St",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/65a1824842b0a38846249aed_HSK03751.jpg",
+      "neighborhood": "Evanston",
+      "address": "1121 Church St",
+      "management": "Cagan Management",
+      "ownership": "Harry Toporek & Topper Management & Luke Thomton",
+      "units": 62,
+      "buildingUrl": null
+    },
+    {
+      "name": "4909-21 Church St",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/65a18445b7ec7f6d4b975028_Exterior-6.jpg",
+      "neighborhood": "Skookie",
+      "address": "4909-21 Church St",
+      "management": "Cagan Management",
+      "ownership": "BC Lafayette Associates LLC",
+      "units": 42,
+      "buildingUrl": null
+    },
+    {
+      "name": "2023-25 N Harlem Ave",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/65a185a1652b1fc5571e584a_HSK05371.jpg",
+      "neighborhood": "Elmwood Park",
+      "address": "2023-25 N Harlem Ave",
+      "management": "Cagan Management",
+      "ownership": "SZHSH LLC",
+      "units": 41,
+      "buildingUrl": null
+    },
+    {
+      "name": "5960 North Winthrop",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61d85dff342e72d24b3de4d9_5960.png",
+      "neighborhood": "Edgewater",
+      "address": "5960 N Winthrop Ave",
+      "management": "Campbell Street",
+      "ownership": "Campbell Street",
+      "units": 36,
+      "buildingUrl": null
+    },
+    {
+      "name": "5710 Hermitage",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61b253dbca684e6723509291_5710NWinthrop.png",
+      "neighborhood": "Andersonville",
+      "address": "5710 N Hermitage Ave",
+      "management": "Campbell Street",
+      "ownership": "Campbell Street",
+      "units": 28,
+      "buildingUrl": null
+    },
+    {
+      "name": "858 North Franklin",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61967ce064fa12af820d9ce3_858%20N%20Franklin.jpg",
+      "neighborhood": "River North",
+      "address": "858 N Franklin St",
+      "management": "Domus Group",
+      "ownership": "Domus Group",
+      "units": 24,
+      "buildingUrl": null
+    },
+    {
+      "name": "324 South Racine",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61967d01e998685d44f883ac_324%20S%20Racine.jpg",
+      "neighborhood": "West Loop",
+      "address": "324 S Racine Ave",
+      "management": "New Era",
+      "ownership": "New Era",
+      "units": 8,
+      "buildingUrl": null
+    },
+    {
+      "name": "1619-21 West Warren",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61967d399af269f979a8bec1_1619%20W%20Warren.jpg",
+      "neighborhood": "West Loop",
+      "address": "1619-21 W Warren Blvd",
+      "management": "High Fidelity",
+      "ownership": "CityPads",
+      "units": 8,
+      "buildingUrl": null
+    },
+    {
+      "name": "213 North Racine",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61967cd221cb1a545c137fd7_213%20N%20Racine.jpg",
+      "neighborhood": "River North",
+      "address": "213 N Racine Ave",
+      "management": "Domus Group",
+      "ownership": "Domus Group",
+      "units": 13,
+      "buildingUrl": null
+    },
+    {
+      "name": "1554 West Hollywood",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61967d2cc05f1198e8ca8899_1554%20W%20Hollywood.jpg",
+      "neighborhood": "Andersonville",
+      "address": "1554 W Hollywood Ave",
+      "management": "High Fidelity",
+      "ownership": "CityPads",
+      "units": 10,
+      "buildingUrl": null
+    },
+    {
+      "name": "847 North Larrabee",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61967cb60be55c1496932ccb_847%20N%20Larrabee.jpg",
+      "neighborhood": "River North",
+      "address": "847 N Larrabee St",
+      "management": "Domus Group",
+      "ownership": "Domus Group",
+      "units": 8,
+      "buildingUrl": null
+    },
+    {
+      "name": "1636 North Western",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61967d48555354bea7a2e70c_1636%20N%20western.jpg",
+      "neighborhood": "Wicker Park",
+      "address": "1636 N Western Ave",
+      "management": "High Fidelity",
+      "ownership": "CityPads",
+      "units": 3,
+      "buildingUrl": null
+    },
+    {
+      "name": "6331 North Wayne",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61967cf19af2693d16a8b5e4_6331%20N%20Wayne.jpg",
+      "neighborhood": "Edgewater",
+      "address": "6331 N Wayne Ave",
+      "management": "New Era",
+      "ownership": "New Era",
+      "units": 6,
+      "buildingUrl": null
+    },
+    {
+      "name": "1235 West Granville",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61967db34ecb4b2172c7f797_1235%20W%20Granville.jpg",
+      "neighborhood": "Edgewater",
+      "address": "1235 W Granville Ave",
+      "management": "ZO Holdings",
+      "ownership": "ZO Holdings",
+      "units": 6,
+      "buildingUrl": null
+    },
+    {
+      "name": "Coeval",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61771cadb913c2ac41c1c20a_43Photo.png",
+      "neighborhood": "South Loop",
+      "address": "51 E 14th St",
+      "management": "Greystar",
+      "ownership": "CMK Companies",
+      "units": 261,
+      "buildingUrl": null
+    },
+    {
+      "name": "Northgate",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61771c7b7282497b7b063944_4Photo.png",
+      "neighborhood": "Falls Church, VA",
+      "address": "450 N Washington St",
+      "management": "Morguard",
+      "ownership": "Morguard",
+      "units": 108,
+      "buildingUrl": null
+    },
+    {
+      "name": "1000 South Clark",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61771edd57c6f198b7bb3a90_Photo12.png",
+      "neighborhood": "South Loop",
+      "address": "1000 S Clark St",
+      "management": "The Habitat Company",
+      "ownership": "iStar and JDL Dev.",
+      "units": 469,
+      "buildingUrl": null
+    },
+    {
+      "name": "811 Uptown",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61771f1c7c578940716bae4a_Photo32.png",
+      "neighborhood": "Uptown",
+      "address": "811 W Agatite Ave",
+      "management": "Bozzuto",
+      "ownership": "JDL, HaRentL & Prud",
+      "units": 381,
+      "buildingUrl": null
+    },
+    {
+      "name": "Southport Lofts",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/617720690195523917410026_Phot535o.png",
+      "neighborhood": "Lincoln Park",
+      "address": "2061 N Southport Ave",
+      "management": "Ameritus",
+      "ownership": "Interra Realty",
+      "units": 66,
+      "buildingUrl": null
+    },
+    {
+      "name": "The Kent Chicago",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/617720ffce111f22728fd6a2_P78hoto.png",
+      "neighborhood": "Lincoln Park",
+      "address": "2623-2627 N Clark St",
+      "management": "PMR Companies",
+      "ownership": "Strategic (SPONA)",
+      "units": 134,
+      "buildingUrl": null
+    },
+    {
+      "name": "L Logan Square",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61772128fc8f530b7b87790a_Phot321o.png",
+      "neighborhood": "Logan Square",
+      "address": "2211 N Milwaukee Ave",
+      "management": "KMS",
+      "ownership": "Property Markets Gr.",
+      "units": 140,
+      "buildingUrl": null
+    },
+    {
+      "name": "Wave Chicago",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/6177209adb8be984d8571655_Phot78o.png",
+      "neighborhood": "Lakeview",
+      "address": "420 W Belmont Ave",
+      "management": "PMR",
+      "ownership": "Strategic Properties",
+      "units": 207,
+      "buildingUrl": null
+    },
+    {
+      "name": "2 West Delaware",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/6177202274931c5e7613602d_Photo33.png",
+      "neighborhood": "Gold Coast",
+      "address": "2 W Delaware Pl",
+      "management": "Bozzuto",
+      "ownership": "JDL",
+      "units": 146,
+      "buildingUrl": null
+    },
+    {
+      "name": "944 West Montrose",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/619678c09bad999abcb8a11e_944%20W%20Montrose.jpg",
+      "neighborhood": "Uptown",
+      "address": "944 W Montrose Ave",
+      "management": "New City",
+      "ownership": "New City",
+      "units": 30,
+      "buildingUrl": null
+    },
+    {
+      "name": "The Hazelton",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61967d0fcc0cc6166d404202_851%20W%20Montrose2.jpg",
+      "neighborhood": "Uptown",
+      "address": "851 W Montrose Ave",
+      "management": "High Fidelity",
+      "ownership": "CityPads",
+      "units": 60,
+      "buildingUrl": null
+    },
+    {
+      "name": "Wilson Club",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61967d1c827e2ad9654881ca_1124%20W%20Wilson%20Ave.jpg",
+      "neighborhood": "Uptown",
+      "address": "1124 W Wilson Ave",
+      "management": "High Fidelity",
+      "ownership": "CityPads",
+      "units": 76,
+      "buildingUrl": null
+    },
+    {
+      "name": "3200 North Clark",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61771d72966e9f7541aa97c7_Phot3o.png",
+      "neighborhood": "Lakeview East",
+      "address": "3200 N Clark St",
+      "management": "33 Realty",
+      "ownership": "Blitzlake Partners",
+      "units": 90,
+      "buildingUrl": null
+    },
+    {
+      "name": "619 South Lasalle",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61771d339ebe514086cc966f_Photo3.png",
+      "neighborhood": "South Loop",
+      "address": "619 S Lasalle St",
+      "management": "Marc Realty Residential",
+      "ownership": "Marc Realty Residential",
+      "units": 101,
+      "buildingUrl": null
+    },
+    {
+      "name": "The Buckler",
+      "photoUrl": "https://cdn.prod.website-files.com/615d44b94015fb38a2d0054a/61771ce9341081f386cd9949_Phot1o.png",
+      "neighborhood": "Milwakee, Wl",
+      "address": "401 W Michigan St",
+      "management": "CA Ventures",
+      "ownership": "CA Ventures",
+      "units": 207,
+      "buildingUrl": null
+    }
+  ]
+}
