@@ -13,7 +13,7 @@ Estos textos están pensados para **copiar y pegar** en el asistente (Cursor, Co
 ### Prompt (copiar todo el bloque siguiente)
 
 ```text
-Contexto: estoy en una carpeta vacia (o quiero crear todo desde cero). Curso Programacion 3, .NET 8, C#, sin Visual Studio: trabajo con terminal (dotnet CLI).
+Contexto: estoy en una carpeta vacia (o quiero crear todo desde cero). Curso Programacion 3, .NET, C#, sin Visual Studio: trabajo con terminal (dotnet CLI).
 
 Objetivo: generar una solucion .NET 8 con:
 1) Un proyecto de aplicacion de consola (por ejemplo nombre `MiApp.Consola`).

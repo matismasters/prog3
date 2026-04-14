@@ -125,7 +125,7 @@ En xUnit, AAA **no es una palabra clave**: es **orden de lineas** dentro del met
 
 ---
 
-# Ejemplo para mostrar en clase
+# Ejemplo para clase
 ## `Calculadora` y tests xUnit
 
 Version completa y lista para copiar en `2026/archivos/ejemplo_calculadora_y_tests_xunit.md`. Aca el nucleo para proyectar o repasar en vivo.
