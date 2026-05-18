@@ -1,0 +1,61 @@
+classDiagram
+    class UsuarioView {
+        +mostrarFormularioCrearUsuario()
+        +mostrarListadoUsuarios(usuarios)
+        +mostrarErrores(errores)
+        +enviarFormularioCrearUsuario(nombre, email)
+        +confirmarEliminacion(usuarioId)
+    }
+
+    class UsuarioController {
+        +Index()
+        +Create()
+        +Store(request)
+        +Delete(id)
+        -validarDatosBasicosDelRequest(request)
+        -convertirRequestEnParametros(request)
+        -decidirVistaORedireccion(resultado)
+    }
+
+    class UsuarioService {
+        +crearUsuario(nombre, email)
+        +listarUsuarios()
+        +eliminarUsuario(usuarioId)
+        +cambiarEmail(usuarioId, nuevoEmail)
+        -verificarQueEmailNoEsteRegistrado(email)
+        -normalizarEmail(email)
+        -validarReglasDeNegocio(usuario)
+    }
+
+    class UsuarioRepository {
+        +guardar(usuario)
+        +buscarPorId(usuarioId)
+        +buscarPorEmail(email)
+        +obtenerTodos()
+        +eliminar(usuario)
+        +existeEmail(email)
+    }
+
+    class Usuario {
+        -int id
+        -string nombre
+        -string email
+        -bool activo
+        +Usuario(nombre, email)
+        +cambiarEmail(nuevoEmail)
+        +desactivar()
+        -validarNombreNoVacio(nombre)
+        -validarFormatoEmail(email)
+    }
+
+    class BaseDeDatos {
+        +tablaUsuarios
+    }
+
+    UsuarioView --> UsuarioController : envía acciones del usuario
+    UsuarioController --> UsuarioService : pide ejecutar casos de uso
+    UsuarioService --> UsuarioRepository : consulta y guarda datos
+    UsuarioRepository --> BaseDeDatos : lee / escribe
+    UsuarioRepository --> Usuario : reconstruye entidades
+    UsuarioService --> Usuario : aplica operaciones del dominio
+    UsuarioController --> UsuarioView : devuelve vista / errores / redirección

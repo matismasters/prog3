@@ -1,5 +1,4 @@
-# Programacion 3 2026
-## Clase 8
+# Clase 8
 
 # Hoy
 
