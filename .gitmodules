@@ -1,3 +1,6 @@
 [submodule "2026/archivos/crud_ado"]
 	path = 2026/archivos/crud_ado
 	url = https://github.com/matismasters/prog3_crud_ado.git
+[submodule "2026/archivos/crud_ef"]
+	path = 2026/archivos/crud_ef
+	url = https://github.com/matismasters/prog3_crud_ef.git
