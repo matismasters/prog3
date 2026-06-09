@@ -101,7 +101,7 @@ animal.Energia = form.Energia;
 _context.SaveChanges();                         // 3. EF detecta qué cambió y arma el UPDATE
 ```
 
-EF **rastrea** ese objeto (lo que se llama *change tracking*): al guardar, compara el estado actual con el que leyó y genera un `UPDATE` que toca **solo las columnas que realmente cambiaron**. La `fecha_alta`, que nunca tocamos, queda intacta. Eso lo da EF gratis; a mano habría que tener cuidado de no pisarla.
+EF **rastrea** ese objeto (lo que se llama *change tracking*): al guardar, compara el estado actual con el que leyó y genera un `UPDATE` que toca **solo las columnas que realmente cambiaron**. La `FechaAlta`, que nunca tocamos, queda intacta. Eso lo da EF gratis; a mano habría que tener cuidado de no pisarla.
 
 ---
 
@@ -125,29 +125,37 @@ private Animal MapearAnimal(SqliteDataReader reader)
 }
 ```
 
-En `crud_ef` **ese método no existe**. En su lugar hay una **descripción** de cómo se relacionan la clase y la tabla, escrita una sola vez en el `DbContext` (`Data/SafariContext.cs`):
+En `crud_ef` **ese método no existe** —y, lo más importante, **tampoco escribimos la configuración del mapeo**. EF mapea la clase a la tabla **por convención**: con solo declarar el `DbSet` en el `DbContext` (`Data/SafariContext.cs`)...
+
+```csharp
+public DbSet<Animal> Animales { get; set; }
+```
+
+...EF ya sabe que hay una tabla `Animales` con una columna por cada propiedad de la clase —`Id`, `Especie`, `Sexo`, `Reserva`, `Energia`, `FechaAlta`—. El nombre de la tabla lo saca del `DbSet`, y el de cada columna, de cada propiedad. **No enumeramos nada.**
+
+Por eso el `OnModelCreating` de `crud_ef` **no describe el mapeo**. Solo contiene las tres cosas que EF **no puede adivinar** —y que, además, no tienen equivalente como anotación en el modelo, así que viven sí o sí acá—:
 
 ```csharp
 protected override void OnModelCreating(ModelBuilder modelBuilder)
 {
     modelBuilder.Entity<Animal>(animal =>
     {
-        animal.ToTable("animales");
-        animal.Property(a => a.Id).HasColumnName("id");
-        animal.Property(a => a.Especie).HasColumnName("especie").IsRequired();
-        animal.Property(a => a.Sexo).HasColumnName("sexo").HasConversion<string>().IsRequired();
-        animal.Property(a => a.Reserva).HasColumnName("reserva").IsRequired();
-        animal.Property(a => a.Energia).HasColumnName("energia").IsRequired();
-        animal.Property(a => a.FechaAlta).HasColumnName("fecha_alta")
-              .HasDefaultValueSql("datetime('now')");
-        // ... seed de datos con HasData (ver Diferencia 3)
+        animal.Property(a => a.Sexo).HasConversion<string>();                     // 1
+        animal.Property(a => a.FechaAlta).HasDefaultValueSql("datetime('now')");  // 2
+        animal.HasData( /* los 4 animales de ejemplo */ );                        // 3
     });
 }
 ```
 
-La diferencia de fondo: a mano escribíamos **el cómo** (leé esta columna, casteala a este tipo, asignala a esta propiedad) en cada lectura y cada escritura. Con EF declaramos **el qué** (esta clase es esta tabla, esta propiedad es esta columna) **una sola vez**, y EF deduce el cómo solo, en todas las operaciones. Ese era el **Dolor 1 — el mapeo a mano**.
+1. **`Sexo` es un `char`** y le pedimos que se guarde como texto (`'M'`/`'H'`) con `HasConversion<string>()`. Es la única propiedad con una particularidad de tipo.
+2. **`FechaAlta`** toma el valor por defecto de la base (`datetime('now')`) cuando no se la setea.
+3. **El seed** de los cuatro animales de ejemplo, que viaja dentro de la migración (ver Diferencia 3).
 
-> Nota: en `Animal.Sexo` somos un caso especial, porque es un `char`. Por eso aparece `HasConversion<string>()`: le decimos a EF que guarde ese carácter como texto (`'M'`/`'H'`). Es la única propiedad que necesitó una aclaración; el resto EF las mapea por convención.
+Sacando esas tres cosas —que no son el mapeo—, el contexto está **vacío de configuración de columnas**: las seis las dedujo EF.
+
+La diferencia de fondo: a mano escribíamos **el cómo** (leé esta columna, casteala a este tipo, asignala a esta propiedad) en cada lectura y cada escritura. Con EF **no escribimos el mapeo en ningún lado**: lo deduce de la clase, por convención, en todas las operaciones. Ese era el **Dolor 1 — el mapeo a mano**.
+
+> **¿Y si una columna se tuviera que llamar distinto que la propiedad?** Ahí —y solo ahí— se usa `HasColumnName("...")` en el `DbContext` (o `[Column("...")]` sobre la propiedad). En este proyecto no hace falta: dejamos que EF nombre las columnas como las propiedades, en PascalCase. Es justo lo contrario del proyecto a mano, donde **cada** nombre de columna lo escribíamos nosotros, a mano, en cada `SELECT` e `INSERT`.
 
 ---
 
@@ -177,7 +185,7 @@ Con EF **no escribimos el `CREATE TABLE`**. Lo genera EF a partir de la clase y 
 dotnet ef migrations add InitialCreate
 ```
 
-Eso crea la carpeta `crud_ef/Migrations/` con un archivo (`..._InitialCreate.cs`) que contiene el schema **derivado del modelo**. Si abrís ese archivo vas a ver el `CreateTable` con las mismas columnas que escribimos a mano en el otro proyecto —`id`, `especie`, `sexo`, `reserva`, `energia`, `fecha_alta`—, pero **EF lo escribió por nosotros**. Hasta los datos de ejemplo viajan ahí dentro: el `HasData` del `DbContext` se traduce en un `InsertData` dentro de la migración.
+Eso crea la carpeta `crud_ef/Migrations/` con un archivo (`..._InitialCreate.cs`) que contiene el schema **derivado del modelo**. Si abrís ese archivo vas a ver el `CreateTable` con una columna por cada propiedad de `Animal` —`Id`, `Especie`, `Sexo`, `Reserva`, `Energia`, `FechaAlta`—, con los nombres tomados de las propiedades por convención (en el proyecto a mano los escribíamos nosotros en minúscula: `id`, `especie`, …). Acá **EF lo escribió por nosotros**. Hasta los datos de ejemplo viajan ahí dentro: el `HasData` del `DbContext` se traduce en un `InsertData` dentro de la migración.
 
 La migración se aplica sola al arrancar, en `Program.cs`:
 
@@ -230,7 +238,7 @@ En EF aparece un actor nuevo, el **`DbContext`** (`SafariContext`), que se regis
 
 | Dolor (en `crud_ado`) | Dónde se veía | Cómo lo resuelve EF (en `crud_ef`) |
 |---|---|---|
-| **1. Mapeo a mano** | `MapearAnimal` y los `INSERT`/`UPDATE` | Se declara una vez en `OnModelCreating`; EF mapea solo |
+| **1. Mapeo a mano** | `MapearAnimal` y los `INSERT`/`UPDATE` | EF mapea por convención; no se escribe el mapeo |
 | **2. Schema divorciado** | `schema.sql` + `InicializarBaseSiHaceFalta` | Migraciones generadas con `dotnet ef migrations add` |
 | **3. Boilerplate** | ~20 líneas por método en el repositorio | El `DbContext` ya es el repositorio: una o dos líneas en el controller |
 
