@@ -27,7 +27,7 @@ Cada fila era un `Dictionary<string, object>`: un mapa de **nombre de columna â†
 ```csharp
 Dictionary<string, object> fila = filas[0];
 
-string especie = (string)fila["especie"];
+string especie = (string)fila["espcie"];
 int energia = Convert.ToInt32(fila["energia"]);
 string sexo = (string)fila["sexo"];
 ```
