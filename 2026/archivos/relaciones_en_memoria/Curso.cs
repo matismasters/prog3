@@ -11,4 +11,7 @@ public class Curso
 
     // Relación 1-N: un curso tiene muchas inscripciones
     public List<Inscripcion> Inscripciones { get; set; } = new();
+
+    // Relación N-N: un curso tiene muchos temas
+    public List<TemaCurso> TemaCursos { get; set; } = new();
 }
