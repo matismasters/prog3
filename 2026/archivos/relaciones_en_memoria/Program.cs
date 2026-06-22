@@ -91,50 +91,52 @@ foreach (Curso c in lucia.Cursos)
     Console.WriteLine($"  - {c.Nombre}: {c.Inscripciones.Count} inscripto(s)");
 }
 
-
+// ================================================================
+// RELACIÓN N A N: Curso ↔ Tema via TemaCurso (ejercicio 2 clase 14)
 // ================================================================
 
-Console.WriteLine("====================================================");
-Console.WriteLine("====================================================");
-Console.WriteLine("====================================================");
-Console.WriteLine("====================================================");
+Tema sqlBasico            = new Tema { Nombre = "SQL Básico" };
+Tema servidoresBD         = new Tema { Nombre = "Servidores de Base de datos" };
+Tema insert               = new Tema { Nombre = "Insert" };
+Tema join                 = new Tema { Nombre = "Join" };
+Tema sqlAvanzado          = new Tema { Nombre = "SQL Avanzado" };
+Tema normalizacion        = new Tema { Nombre = "Normalización" };
+Tema optimizacion         = new Tema { Nombre = "Optimización" };
+Tema seguridad            = new Tema { Nombre = "Seguridad" };
 
-// Cursos:
-// db1: Base de datos 1
-// - Tema: SQL Basico
-// - Tema: Servidores de Base de datos
-// - Tema: Insert
-// - Tema: Join
-// db2: Base de datos 2
-// - Tema: SQL Avanzado
-// - Tema: Normalización
-// - Tema: Optimización
-// - Tema: Seguridad
+TemaCurso tc1 = new TemaCurso { Tema = sqlBasico,    Curso = db1 };
+TemaCurso tc2 = new TemaCurso { Tema = servidoresBD, Curso = db1 };
+TemaCurso tc3 = new TemaCurso { Tema = insert,       Curso = db1 };
+TemaCurso tc4 = new TemaCurso { Tema = join,         Curso = db1 };
+TemaCurso tc5 = new TemaCurso { Tema = sqlAvanzado,  Curso = db2 };
+TemaCurso tc6 = new TemaCurso { Tema = normalizacion,Curso = db2 };
+TemaCurso tc7 = new TemaCurso { Tema = optimizacion, Curso = db2 };
+TemaCurso tc8 = new TemaCurso { Tema = seguridad,    Curso = db2 };
 
-Tema sqlBasico = new Tema { Nombre = "SQL Basico" };
-Tema servidoresBaseDeDatos = new Tema { Nombre = "Servidores de Base de datos" };
-Tema insert = new Tema { Nombre = "Insert" };
-Tema join = new Tema { Nombre = "Join" };
-Tema sqlAvanzado = new Tema { Nombre = "SQL Avanzado" };
-Tema normalizacion = new Tema { Nombre = "Normalización" };
-Tema optimizacion = new Tema { Nombre = "Optimización" };
-Tema seguridad = new Tema { Nombre = "Seguridad" };
+db1.TemaCursos.AddRange(new[] { tc1, tc2, tc3, tc4 });
+db2.TemaCursos.AddRange(new[] { tc5, tc6, tc7, tc8 });
+sqlBasico.TemaCursos.Add(tc1); servidoresBD.TemaCursos.Add(tc2);
+insert.TemaCursos.Add(tc3);    join.TemaCursos.Add(tc4);
+sqlAvanzado.TemaCursos.Add(tc5); normalizacion.TemaCursos.Add(tc6);
+optimizacion.TemaCursos.Add(tc7); seguridad.TemaCursos.Add(tc8);
 
-TemaCurso temaCurso1 = new TemaCurso { Tema = sqlBasico, Curso = db1 };
-TemaCurso temaCurso2 = new TemaCurso { Tema = servidoresBaseDeDatos, Curso = db1 };
-TemaCurso temaCurso3 = new TemaCurso { Tema = insert, Curso = db1 };
-TemaCurso temaCurso4 = new TemaCurso { Tema = join, Curso = db1 };
-TemaCurso temaCurso5 = new TemaCurso { Tema = sqlAvanzado, Curso = db2 };
-TemaCurso temaCurso6 = new TemaCurso { Tema = normalizacion, Curso = db2 };
-TemaCurso temaCurso7 = new TemaCurso { Tema = optimizacion, Curso = db2 };
-TemaCurso temaCurso8 = new TemaCurso { Tema = seguridad, Curso = db2 };
+Console.WriteLine("\n=== N a N: Curso → Temas ===");
+foreach (Curso c in lucia.Cursos)
+{
+    Console.WriteLine($"  {c.Nombre}:");
+    foreach (TemaCurso tc in c.TemaCursos)
+    {
+        Console.WriteLine($"    - {tc.Tema?.Nombre}");
+    }
+}
 
-db1.TemaCursos.Add(temaCurso1);
-db1.TemaCursos.Add(temaCurso2);
-db1.TemaCursos.Add(temaCurso3);
-db1.TemaCursos.Add(temaCurso4);
+// ================================================================
+// CLASE ABSTRACTA Y POLIMORFISMO
+// ================================================================
 
-db2.TemaCursos.Add(temaCurso5);
-db2.TemaCursos.Add(temaCurso6);
-db2.TemaCursos.Add(temaCurso7);
-db2.TemaCursos.Add(temaCurso8);
+Console.WriteLine("\n=== Polimorfismo: lista de Persona ===");
+List<Persona> personas = new List<Persona> { lucia, ana, luis };
+foreach (Persona p in personas)
+{
+    Console.WriteLine(p.Saludo());
+}
