@@ -308,8 +308,8 @@ Cuando en la Unidad 8 (Arquitectura en capas) diseñemos el dominio, si detectam
 
 ## Para practicar
 
-**Ejercicio 1 — Método abstracto nuevo:** Agregá el método abstracto `string ObtenerDescripcionBreve()` a `Persona`. Hacé que `Docente` devuelva `"Docente - {Especialidad}"` y `Estudiante` devuelva `"Estudiante - {Inscripciones.Count} cursos"`. Recorré la lista `personas` y mostrá la descripción breve de cada una.
+El archivo `archivos/sistema_logs_2026.zip` contiene registros de los sistemas de una empresa a lo largo de varios meses. Descomprimilo antes de empezar.
 
-**Ejercicio 2 — Filtrar por tipo:** Con la lista `List<Persona> personas` y usando el operador `is`, separala en dos listas: una de `Docente` y otra de `Estudiante`. Mostrá el recuento de cada una. ¿Qué pasa si en el futuro agregamos un tercer subtipo, por ejemplo `Administrativo`?
+Construí una aplicación de consola en C# que lea el archivo, procese los registros y muestre un **dashboard** con la información que consideres más relevante.
 
-**Ejercicio 3 — Clase abstracta `Actividad`:** El sistema tiene `Curso` y podría tener otros tipos de actividades (taller, seminario, charla). Diseñá una clase abstracta `Actividad` con las propiedades `Id` y `Nombre` y el método abstracto `string TipoActividad()`. Hacé que `Curso` herede de `Actividad`. ¿Qué ventaja da ese cambio si mañana hay que agregar `Taller`?
+Usá todo lo que aprendimos hasta ahora.
