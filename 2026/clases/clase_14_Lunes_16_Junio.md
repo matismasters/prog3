@@ -383,41 +383,9 @@ cd RelacionesEnMemoria
 dotnet run
 ```
 
+> **Nota — orden del archivo:** cuando un `Program.cs` usa *top-level statements* (código suelto sin un `Main` explícito), C# exige que ese código vaya **antes** que cualquier declaración de clase. Si ponés las clases primero, el compilador corta con el error `CS8803: Top-level statements must precede namespace and type declarations`. Por eso, en el archivo de abajo van primero las instancias y la navegación, y las clases quedan al final.
+
 ```csharp
-// ---- Clases del dominio ----
-
-public class Docente
-{
-    public int Id { get; set; }
-    public string Nombre { get; set; } = "";
-    public string Especialidad { get; set; } = "";
-    public List<Curso> Cursos { get; set; } = new();
-}
-
-public class Curso
-{
-    public int Id { get; set; }
-    public string Nombre { get; set; } = "";
-    public int Cupo { get; set; }
-    public Docente? Docente { get; set; }
-    public List<Inscripcion> Inscripciones { get; set; } = new();
-}
-
-public class Estudiante
-{
-    public int Id { get; set; }
-    public string Nombre { get; set; } = "";
-    public List<Inscripcion> Inscripciones { get; set; } = new();
-}
-
-public class Inscripcion
-{
-    public DateTime Fecha { get; set; }
-    public string Estado { get; set; } = "Activa";
-    public Estudiante Estudiante { get; set; } = null!;
-    public Curso Curso { get; set; } = null!;
-}
-
 // ---- Instancias y relaciones ----
 
 Docente lucia = new Docente { Id = 1, Nombre = "Lucía Rodríguez", Especialidad = "Bases de datos" };
@@ -460,6 +428,41 @@ Console.WriteLine($"\nEstudiantes en '{db1.Nombre}':");
 foreach (Inscripcion ins in db1.Inscripciones)
 {
     Console.WriteLine($"  {ins.Estudiante.Nombre} — inscripto el {ins.Fecha:dd/MM/yyyy}");
+}
+
+// ---- Clases del dominio ----
+// Van al final: las declaraciones de clase deben ir DESPUÉS de los top-level statements.
+
+public class Docente
+{
+    public int Id { get; set; }
+    public string Nombre { get; set; } = "";
+    public string Especialidad { get; set; } = "";
+    public List<Curso> Cursos { get; set; } = new();
+}
+
+public class Curso
+{
+    public int Id { get; set; }
+    public string Nombre { get; set; } = "";
+    public int Cupo { get; set; }
+    public Docente? Docente { get; set; }
+    public List<Inscripcion> Inscripciones { get; set; } = new();
+}
+
+public class Estudiante
+{
+    public int Id { get; set; }
+    public string Nombre { get; set; } = "";
+    public List<Inscripcion> Inscripciones { get; set; } = new();
+}
+
+public class Inscripcion
+{
+    public DateTime Fecha { get; set; }
+    public string Estado { get; set; } = "Activa";
+    public Estudiante Estudiante { get; set; } = null!;
+    public Curso Curso { get; set; } = null!;
 }
 ```
 
