@@ -308,8 +308,60 @@ Cuando en la Unidad 8 (Arquitectura en capas) diseñemos el dominio, si detectam
 
 ## Para practicar
 
+Los ejercicios 1 al 6 son **obligatorios** y se construyen sobre el proyecto `RelacionesEnMemoria` con la clase abstracta `Persona` (estimado: 60–75 minutos). Los ejercicios 7 y 8 son **opcionales / desafío**.
+
+---
+
+**1. ¿Por qué `Persona` es abstracta?** *(~10 minutos, sin código)*
+
+Explicá con tus palabras, en tres o cuatro oraciones, por qué tiene sentido que `Persona` sea abstracta y no concreta. ¿Qué representa en el dominio del sistema? ¿Qué problema evitaríamos al impedir `new Persona()`?
+
+---
+
+**2. Una subclase nueva: `Administrativo`** *(~10 minutos)*
+
+Agregá una clase `Administrativo : Persona` con una propiedad `Area` (string) y su propia implementación de `ObtenerRol()` que devuelva algo como `"Administrativo de Bedelía"`. Creá un administrativo, agregalo a la `List<Persona>` junto con los docentes y estudiantes, y verificá que `Saludo()` funciona sin tocar el `foreach`.
+
+---
+
+**3. Un segundo método abstracto** *(~10 minutos)*
+
+Agregá a `Persona` un método abstracto `string ObtenerDescripcion()`. Implementalo en `Docente`, `Estudiante` y `Administrativo`, cada uno con una descripción apropiada (por ejemplo, el docente incluye su especialidad; el estudiante, su cantidad de inscripciones). Compilá: si te olvidás de implementarlo en alguna subclase, copiá el error `CS0534` que da el compilador.
+
+---
+
+**4. Un método concreto que usa los abstractos** *(~10 minutos)*
+
+Agregá a `Persona` un método **concreto** `string FichaCompleta()` que combine `Nombre`, `ObtenerRol()` y `ObtenerDescripcion()` en una sola línea. Como es concreto, se escribe una sola vez en `Persona` y lo heredan todas las subclases. Recorré la `List<Persona>` mostrando la ficha de cada una. Observá que el método base llama a métodos abstractos que resuelve cada subclase: eso es polimorfismo.
+
+---
+
+**5. Polimorfismo en un método propio** *(~10 minutos)*
+
+Escribí un método estático `MostrarRoles(List<Persona> personas)` que reciba la lista y muestre el rol de cada una usando `ObtenerRol()`, **sin preguntar ni una vez el tipo concreto** (nada de `if (p is Docente)`). Probá que funciona igual para docentes, estudiantes y administrativos.
+
+---
+
+**6. Reproducir los errores del contrato** *(~10 minutos)*
+
+Hacé dos pruebas y copiá el mensaje exacto del compilador en cada una:
+- a) Intentá crear `Persona p = new Persona();`. ¿Qué error da? (Pista: `CS0144`.)
+- b) Creá una subclase `Invitado : Persona` que **no** implemente `ObtenerRol()`. ¿Qué error da? (Pista: `CS0534`.)
+
+Después arreglá ambos: borrá el `new Persona()` e implementá `ObtenerRol()` en `Invitado`.
+
+---
+
+**7. Integrador con archivo de logs** *(desafío — ~30 minutos)*
+
 El archivo `archivos/sistema_logs_2026.zip` contiene registros de los sistemas de una empresa a lo largo de varios meses. Descomprimilo antes de empezar.
 
-Construí una aplicación de consola en C# que lea el archivo, procese los registros y muestre un **dashboard** con la información que consideres más relevante.
+Construí una aplicación de consola que lea el archivo y muestre un **dashboard**, pero modelando los registros con una **clase abstracta**: definí `RegistroLog` (abstracta) con las propiedades comunes (fecha, mensaje) y un método abstracto `string Resumen()`. Creá subclases según el nivel del registro —por ejemplo `RegistroInfo`, `RegistroAdvertencia`, `RegistroError`—, cada una con su propio `Resumen()`. Cargá todos los registros en una `List<RegistroLog>` y generá el dashboard recorriéndola **polimórficamente** (por ejemplo, contando cuántos hay de cada tipo y mostrando el resumen de los errores).
 
-Usá todo lo que aprendimos hasta ahora.
+El objetivo es que el dashboard se apoye en la clase abstracta y el polimorfismo, no en `if` por tipo.
+
+---
+
+**8. Clase abstracta vs interfaz: anticipo** *(desafío — ~10 minutos, sin código)*
+
+`Persona` es una clase abstracta porque sus subclases **son** personas y comparten código (`Id`, `Nombre`, `Saludo()`). Pensá en un comportamiento que podrían tener tanto un `Docente` como un `Curso` (que **no** es una persona) —por ejemplo, "poder exportarse a texto"—. ¿Te alcanza una clase abstracta para eso? Anotá tu intuición: la vamos a necesitar para la próxima clase, donde aparecen las **interfaces**.
